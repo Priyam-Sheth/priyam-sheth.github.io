@@ -1,0 +1,25 @@
+<svg viewBox="0 0 1000 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dgO-t" font-family="'Fragment Mono','Courier New',monospace" class="diagram">
+  <title id="dgO-t">The overnight pipeline: checks the photos, uploads, the AI works, downloads, polishes, done. If you close it mid-batch it resumes exactly where it stopped.</title>
+  <style>
+    .node    { fill:#FAF8F3; stroke:#141310; stroke-width:1.5; }
+    .t-title { font-size:12.5px; font-weight:700; fill:#141310; letter-spacing:0.2px; }
+    .t-tag   { font-size:11px; fill:#6B6560; letter-spacing:0.5px; }
+    .fillbar { fill:#C8430A; }
+    .track   { fill:none; stroke:#DDD8CE; stroke-width:2; }
+  </style>
+
+  <g data-draw="1"><rect class="node" x="20"  y="40" width="150" height="44"/><text class="t-title" x="34"  y="67">checks photos</text></g>
+  <g data-draw="2"><rect class="node" x="182" y="40" width="120" height="44"/><text class="t-title" x="196" y="67">uploads</text></g>
+  <g data-draw="3"><rect class="node" x="314" y="40" width="150" height="44"/><text class="t-title" x="328" y="67">the AI works</text></g>
+  <g data-draw="4"><rect class="node" x="476" y="40" width="140" height="44"/><text class="t-title" x="490" y="67">downloads</text></g>
+  <g data-draw="5"><rect class="node" x="628" y="40" width="130" height="44"/><text class="t-title" x="642" y="67">polishes</text></g>
+  <g data-draw="6"><rect class="node" x="770" y="40" width="110" height="44"/><text class="t-title" x="784" y="67">done ✓</text></g>
+
+  <!-- progress underline: scaleX-scrubbed in the film (transform-only) -->
+  <line class="track" x1="20" y1="104" x2="880" y2="104"/>
+  <rect class="fillbar" data-progress="1" x="20" y="102" width="860" height="4" style="transform-origin:20px 104px"/>
+
+  <g data-draw="7">
+    <text class="t-tag" x="20" y="140">close it mid-batch? it picks up exactly where it left off. it writes things down.</text>
+  </g>
+</svg>

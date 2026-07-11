@@ -1,0 +1,55 @@
+<svg viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dgP-t" font-family="'Fragment Mono','Courier New',monospace" class="diagram">
+  <title id="dgP-t">What happens at 7:29 every weekday: the schedule fires, the system reads the books, writes the summary, checks itself for leaks, and two phones buzz at 7:30.</title>
+  <style>
+    .node      { fill:#FAF8F3; stroke:#141310; stroke-width:1.5; }
+    .node-red  { fill:#FAF8F3; stroke:#C8430A; stroke-width:2; }
+    .t-title   { font-size:14px; font-weight:700; fill:#141310; letter-spacing:0.3px; }
+    .t-sub     { font-size:11px; fill:#6B6560; letter-spacing:0.3px; }
+    .t-tag     { font-size:11px; fill:#6B6560; letter-spacing:0.5px; }
+    .t-tag-red { font-size:11px; fill:#C8430A; letter-spacing:0.5px; font-weight:700; }
+    .flow      { fill:none; stroke:#141310; stroke-width:1.5; stroke-dasharray:5 5; }
+    .flow-red  { fill:none; stroke:#C8430A; stroke-width:2; }
+  </style>
+  <defs>
+    <marker id="dgP-a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L8,4 L0,8" fill="none" stroke="#141310" stroke-width="1.4"/>
+    </marker>
+    <marker id="dgP-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L8,4 L0,8" fill="none" stroke="#C8430A" stroke-width="1.4"/>
+    </marker>
+  </defs>
+
+  <g data-draw="1">
+    <rect class="node" x="30" y="80" width="160" height="70"/>
+    <text class="t-title" x="44" y="108">7:29 pm</text>
+    <text class="t-sub" x="44" y="130">the schedule fires</text>
+  </g>
+  <g data-draw="2"><path class="flow" d="M190,115 H222" marker-end="url(#dgP-a)"/></g>
+  <g data-draw="3">
+    <rect class="node" x="222" y="80" width="170" height="70"/>
+    <text class="t-title" x="236" y="108">reads the books</text>
+    <text class="t-sub" x="236" y="130">sales · money in/out</text>
+  </g>
+  <g data-draw="4"><path class="flow" d="M392,115 H424" marker-end="url(#dgP-a)"/></g>
+  <g data-draw="5">
+    <rect class="node" x="424" y="80" width="180" height="70"/>
+    <text class="t-title" x="438" y="108">writes the summary</text>
+    <text class="t-sub" x="438" y="130">the day, in one message</text>
+  </g>
+  <g data-draw="6"><path class="flow" d="M604,115 H636" marker-end="url(#dgP-a)"/></g>
+  <g data-draw="7">
+    <rect class="node" x="636" y="80" width="180" height="70"/>
+    <text class="t-title" x="650" y="108">checks itself</text>
+    <text class="t-sub" x="650" y="130">no secrets in the message</text>
+  </g>
+  <g data-draw="8"><path class="flow-red" d="M816,115 H848" marker-end="url(#dgP-ar)"/></g>
+  <g data-draw="9">
+    <rect class="node-red" x="848" y="80" width="130" height="70"/>
+    <text class="t-title" x="862" y="108">7:30 pm</text>
+    <text class="t-tag-red" x="862" y="130">two phones buzz</text>
+  </g>
+  <g data-draw="10">
+    <text class="t-tag" x="30" y="210">the whole loop, no humans involved. they just read it.</text>
+    <text class="t-tag-red" x="30" y="236">running unattended since march 2026 — better attendance than anyone I've ever met.</text>
+  </g>
+</svg>

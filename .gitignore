@@ -1,0 +1,8 @@
+node_modules/
+package-lock.json
+package.json
+fontshare.css
+fragmono.css
+docs/walk-*.png
+docs/gate3-*.png
+docs/final-period.png

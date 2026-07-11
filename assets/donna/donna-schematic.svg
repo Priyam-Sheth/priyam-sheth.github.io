@@ -1,0 +1,150 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="d3Title d3Desc" font-family="'Fragment Mono','Courier New',monospace">
+  <title id="d3Title">Donna — System Schematic</title>
+  <desc id="d3Desc">Engineering schematic of Donna, a persistent AI chief of staff: operator on Telegram, a mind built from LLM-reranked retrieval over a memory palace with a scarring correction ledger, guardrails including a locked boot and routing guard, and an agent fleet of worker and read-only critic with a confirm gate.</desc>
+
+  <style>
+    .sheet     { fill:#F4F1EA; }
+    .node      { fill:#FAF8F3; stroke:#141310; stroke-width:1.5; }
+    .node-hero { fill:#FAF8F3; stroke:#141310; stroke-width:2; }
+    .band-rule { stroke:#DDD8CE; stroke-width:1; }
+    .frame     { fill:none; stroke:#141310; stroke-width:1.5; }
+    .tick      { stroke:#141310; stroke-width:1.5; }
+    .t-title   { font-size:13px; font-weight:700; fill:#141310; letter-spacing:0.4px; }
+    .t-sub     { font-size:10.5px; fill:#6B6560; letter-spacing:0.3px; }
+    .t-band    { font-size:10px; fill:#6B6560; letter-spacing:2.2px; }
+    .t-tag     { font-size:10px; fill:#6B6560; letter-spacing:0.5px; }
+    .t-tag-red { font-size:10px; fill:#C8430A; letter-spacing:0.5px; }
+    .t-block   { font-size:10px; fill:#141310; letter-spacing:0.6px; }
+    .t-block-h { font-size:10.5px; font-weight:700; fill:#141310; letter-spacing:0.4px; }
+    .flow      { fill:none; stroke:#141310; stroke-width:1.25; stroke-dasharray:5 5; }
+    .flow-red  { fill:none; stroke:#C8430A; stroke-width:1.5;  stroke-dasharray:7 5; }
+    .anim .flow     { animation: march 1.6s linear infinite; }
+    .anim .flow-red { animation: march 2.2s linear infinite; }
+    @keyframes march { to { stroke-dashoffset: -10; } }
+    @media (prefers-reduced-motion: reduce) {
+      .anim .flow, .anim .flow-red { animation: none; }
+    }
+  </style>
+
+  <defs>
+    <marker id="arr3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L8,4 L0,8" fill="none" stroke="#141310" stroke-width="1.4"/>
+    </marker>
+    <marker id="arrRed3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L8,4 L0,8" fill="none" stroke="#C8430A" stroke-width="1.4"/>
+    </marker>
+  </defs>
+
+  <rect class="sheet" x="0" y="0" width="1200" height="800"/>
+  <rect class="frame" x="24" y="24" width="1152" height="752"/>
+  <path class="tick" d="M24,44 V24 H44 M1156,24 H1176 V44 M1176,756 V776 H1156 M44,776 H24 V756" fill="none"/>
+
+  <g class="anim">
+
+  <!-- band labels + rules -->
+  <text class="t-band" x="60" y="62">01 · OPERATOR</text>
+  <line class="band-rule" x1="182" y1="58" x2="1140" y2="58"/>
+  <text class="t-band" x="60" y="192">02 · THE MIND</text>
+  <line class="band-rule" x1="182" y1="188" x2="1140" y2="188"/>
+  <text class="t-band" x="60" y="392">03 · GUARDRAILS</text>
+  <line class="band-rule" x1="198" y1="388" x2="1140" y2="388"/>
+  <text class="t-band" x="60" y="572">04 · AGENT FLEET</text>
+  <line class="band-rule" x1="198" y1="568" x2="1140" y2="568"/>
+
+  <!-- ============ 01 OPERATOR ============ -->
+  <rect class="node" x="140" y="88" width="220" height="60"/>
+  <text class="t-title" x="152" y="110">PRIYAM — TELEGRAM</text>
+  <text class="t-sub"   x="152" y="126">one person · months of context</text>
+
+  <rect class="node" x="880" y="88" width="230" height="60"/>
+  <text class="t-title" x="892" y="110">CORE API + MCP</text>
+  <text class="t-sub"   x="892" y="126">one mind, many faces —</text>
+  <text class="t-sub"   x="892" y="140">grounds every coding session</text>
+
+  <!-- ============ 02 THE MIND ============ -->
+  <rect class="node-hero" x="140" y="215" width="280" height="100"/>
+  <line class="band-rule" x1="140" y1="247" x2="420" y2="247"/>
+  <text class="t-title" x="152" y="237">MEMORY PALACE</text>
+  <text class="t-sub"   x="152" y="269">local store · curated memory</text>
+  <text class="t-sub"   x="152" y="285">llm-reranked retrieval</text>
+  <text class="t-sub"   x="152" y="301">~$0.001 per query</text>
+
+  <rect class="node" x="470" y="215" width="280" height="100"/>
+  <line class="band-rule" x1="470" y1="247" x2="750" y2="247"/>
+  <text class="t-title" x="482" y="237">CORRECTION LEDGER</text>
+  <text class="t-sub"   x="482" y="269">corrections scar, not scrub</text>
+  <text class="t-sub"   x="482" y="285">every fix leaves a tombstone —</text>
+  <text class="t-sub"   x="482" y="301">history cannot be laundered</text>
+
+  <rect class="node" x="800" y="215" width="270" height="100"/>
+  <line class="band-rule" x1="800" y1="247" x2="1070" y2="247"/>
+  <text class="t-title" x="812" y="237">WEB SEARCH ROUTER</text>
+  <text class="t-sub"   x="812" y="269">autonomous · conservative</text>
+  <text class="t-sub"   x="812" y="285">never searches his personal life</text>
+  <text class="t-sub"   x="812" y="301">adversarially tested pre-launch</text>
+
+  <!-- evidence tags -->
+  <text class="t-tag" x="140" y="345">RETRIEVAL BOARD — 20/20</text>
+  <text class="t-tag" x="470" y="345">TOMBSTONES — APPEND-ONLY</text>
+  <text class="t-tag" x="800" y="345">ROUTING BOARD — 0 LEAKS</text>
+
+  <!-- ============ 03 GUARDRAILS ============ -->
+  <rect class="node" x="140" y="415" width="280" height="90"/>
+  <text class="t-title" x="152" y="437">LOCKED BOOT</text>
+  <text class="t-sub"   x="152" y="453">PIN · scrypt · fail-closed</text>
+  <text class="t-sub"   x="152" y="469">exponential backoff — correct</text>
+  <text class="t-sub"   x="152" y="485">PIN refused during backoff</text>
+
+  <rect class="node" x="470" y="415" width="280" height="90"/>
+  <text class="t-title" x="482" y="437">AUDIT TRAIL</text>
+  <text class="t-sub"   x="482" y="453">append-only ledger behind</text>
+  <text class="t-sub"   x="482" y="469">every consequential act</text>
+
+  <rect class="node" x="800" y="415" width="270" height="90"/>
+  <text class="t-title" x="812" y="437">CONFIRM GATE</text>
+  <text class="t-sub"   x="812" y="453">confirm-before-dispatch</text>
+  <text class="t-sub"   x="812" y="469">irreversible actions</text>
+  <text class="t-sub"   x="812" y="485">gated on the operator</text>
+
+  <!-- ============ 04 AGENT FLEET ============ -->
+  <rect class="node-hero" x="140" y="595" width="280" height="80"/>
+  <text class="t-title" x="152" y="617">WORKER SESSIONS</text>
+  <text class="t-sub"   x="152" y="633">dispatched builds · full tools</text>
+  <text class="t-sub"   x="152" y="649">report cost + diff on delivery</text>
+
+  <rect class="node" x="470" y="595" width="280" height="80"/>
+  <text class="t-title" x="482" y="617">CRITIC</text>
+  <text class="t-sub"   x="482" y="633">structurally read-only —</text>
+  <text class="t-sub"   x="482" y="649">reviews diffs · runs the tests</text>
+
+  <text class="t-tag-red" x="800" y="617">FIRST LIVE MISSION —</text>
+  <text class="t-tag" x="800" y="633">seeded bug fixed end-to-end</text>
+  <text class="t-tag" x="800" y="649">$0.35 · one iteration · approved</text>
+  <text class="t-tag" x="800" y="665">by her own critic · two words in</text>
+
+  <!-- ink flows -->
+  <path class="flow" d="M250,148 V215" marker-start="url(#arr3)" marker-end="url(#arr3)"/>
+  <path class="flow" d="M420,265 H470" marker-end="url(#arr3)"/>
+  <path class="flow" d="M995,148 V215" marker-start="url(#arr3)" marker-end="url(#arr3)"/>
+  <path class="flow" d="M380,315 V415" marker-end="url(#arr3)"/>
+  <path class="flow" d="M610,505 V595" marker-start="url(#arr3)" marker-end="url(#arr3)"/>
+
+  <!-- red: the live-mission loop — operator → dispatch → worker → critic → phone -->
+  <path class="flow-red" d="M360,100 H460 V180 M460,180 H770 V540 H935 V505" marker-end="url(#arrRed3)"/>
+  <path class="flow-red" d="M800,540 H280 V595" marker-end="url(#arrRed3)"/>
+  <text class="t-tag-red" x="945" y="528">— MISSION LOOP</text>
+
+  </g>
+
+  <!-- ============ TITLE BLOCK — 2-col grid, budgeted cells ============ -->
+  <rect class="frame" x="840" y="692" width="336" height="84" fill="#FAF8F3"/>
+  <line class="band-rule" x1="840" y1="720" x2="1176" y2="720"/>
+  <line class="band-rule" x1="840" y1="748" x2="1176" y2="748"/>
+  <line class="band-rule" x1="1060" y1="692" x2="1060" y2="776"/>
+  <text class="t-block-h" x="852" y="711" data-max-x="1052">DONNA — SYSTEM SCHEMATIC</text>
+  <text class="t-block" x="1072" y="711" data-max-x="1168">FIG. 03</text>
+  <text class="t-block" x="852" y="738" data-max-x="1052">PERSISTENT · IN SERVICE</text>
+  <text class="t-block" x="1072" y="738" data-max-x="1168">SHEET 1/1</text>
+  <text class="t-block" x="852" y="766" data-max-x="1052">PRINCIPAL — PRIYAM SHETH</text>
+  <text class="t-block" x="1072" y="766" data-max-x="1168">SCALE — NONE</text>
+</svg>

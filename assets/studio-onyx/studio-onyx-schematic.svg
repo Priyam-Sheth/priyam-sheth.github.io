@@ -1,0 +1,121 @@
+<svg viewBox="0 0 1200 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="so4Title so4Desc" font-family="'Fragment Mono','Courier New',monospace">
+  <title id="so4Title">Studio Onyx — Batch State Machine</title>
+  <desc id="so4Desc">Lifecycle schematic of Studio Onyx's resumable batch pipeline: seven stations from pre-submit through complete, every transition persisted with atomic writes to state.json, with auto-resume on relaunch highlighted at the polling station.</desc>
+
+  <style>
+    .sheet     { fill:#F4F1EA; }
+    .node      { fill:#FAF8F3; stroke:#141310; stroke-width:1.5; }
+    .node-hero { fill:#FAF8F3; stroke:#141310; stroke-width:2; }
+    .band-rule { stroke:#DDD8CE; stroke-width:1; }
+    .frame     { fill:none; stroke:#141310; stroke-width:1.5; }
+    .tick      { stroke:#141310; stroke-width:1.5; }
+    .t-title   { font-size:13px; font-weight:700; fill:#141310; letter-spacing:0.4px; }
+    .t-sub     { font-size:10.5px; fill:#6B6560; letter-spacing:0.3px; }
+    .t-band    { font-size:10px; fill:#6B6560; letter-spacing:2.2px; }
+    .t-tag     { font-size:10px; fill:#6B6560; letter-spacing:0.5px; }
+    .t-tag-red { font-size:10px; fill:#C8430A; letter-spacing:0.5px; }
+    .t-block   { font-size:10px; fill:#141310; letter-spacing:0.6px; }
+    .t-block-h { font-size:10.5px; font-weight:700; fill:#141310; letter-spacing:0.4px; }
+    .flow      { fill:none; stroke:#141310; stroke-width:1.25; stroke-dasharray:5 5; }
+    .flow-red  { fill:none; stroke:#C8430A; stroke-width:1.5;  stroke-dasharray:7 5; }
+    .anim .flow     { animation: march 1.6s linear infinite; }
+    .anim .flow-red { animation: march 2.2s linear infinite; }
+    @keyframes march { to { stroke-dashoffset: -10; } }
+    @media (prefers-reduced-motion: reduce) {
+      .anim .flow, .anim .flow-red { animation: none; }
+    }
+  </style>
+
+  <defs>
+    <marker id="arr4" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L8,4 L0,8" fill="none" stroke="#141310" stroke-width="1.4"/>
+    </marker>
+    <marker id="arrRed4" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L8,4 L0,8" fill="none" stroke="#C8430A" stroke-width="1.4"/>
+    </marker>
+  </defs>
+
+  <rect class="sheet" x="0" y="0" width="1200" height="460"/>
+  <rect class="frame" x="24" y="24" width="1152" height="412"/>
+  <path class="tick" d="M24,44 V24 H44 M1156,24 H1176 V44 M1176,416 V436 H1156 M44,436 H24 V416" fill="none"/>
+
+  <g class="anim">
+
+  <text class="t-band" x="60" y="66">01 · BATCH LIFECYCLE</text>
+  <line class="band-rule" x1="240" y1="62" x2="1140" y2="62"/>
+
+  <!-- ============ SEVEN STATIONS ============ -->
+  <rect class="node" x="60"  y="110" width="132" height="60"/>
+  <text class="t-title" x="72" y="138">PRE_SUBMIT</text>
+  <text class="t-sub"  x="72" y="156">scan · cost</text>
+
+  <rect class="node" x="218" y="110" width="132" height="60"/>
+  <text class="t-title" x="230" y="138">UPLOADING</text>
+  <text class="t-sub"  x="230" y="156">files api</text>
+
+  <rect class="node" x="376" y="110" width="132" height="60"/>
+  <text class="t-title" x="388" y="138">SUBMITTING</text>
+  <text class="t-sub"  x="388" y="156">batch job</text>
+
+  <rect class="node-hero" x="534" y="110" width="132" height="60"/>
+  <text class="t-title" x="546" y="138">POLLING</text>
+  <text class="t-sub"  x="546" y="156">unattended</text>
+
+  <rect class="node" x="692" y="110" width="132" height="60"/>
+  <text class="t-title" x="704" y="138">DOWNLOAD</text>
+  <text class="t-sub"  x="704" y="156">results jsonl</text>
+
+  <rect class="node" x="850" y="110" width="132" height="60"/>
+  <text class="t-title" x="862" y="138">POST_PROC</text>
+  <text class="t-sub"  x="862" y="156">calibration</text>
+
+  <rect class="node" x="1008" y="110" width="132" height="60"/>
+  <text class="t-title" x="1020" y="138">COMPLETE</text>
+  <text class="t-sub"  x="1020" y="156">report.html</text>
+
+  <!-- station-to-station flow -->
+  <path class="flow" d="M192,140 H218" marker-end="url(#arr4)"/>
+  <path class="flow" d="M350,140 H376" marker-end="url(#arr4)"/>
+  <path class="flow" d="M508,140 H534" marker-end="url(#arr4)"/>
+  <path class="flow" d="M666,140 H692" marker-end="url(#arr4)"/>
+  <path class="flow" d="M824,140 H850" marker-end="url(#arr4)"/>
+  <path class="flow" d="M982,140 H1008" marker-end="url(#arr4)"/>
+
+  <!-- MPO inspection stamp under the intake stations (fits the x128..440 tick gap) -->
+  <text class="t-tag" x="150" y="196">▸ normalize_for_upload — MPO/CMYK/EXIF</text>
+
+  <!-- ============ STATE LEDGER BAR ============ -->
+  <rect class="node" x="60" y="230" width="1080" height="44"/>
+  <text class="t-title" x="72" y="257">state.json</text>
+  <text class="t-sub"   x="180" y="257">atomic writes — temp file + rename · every transition persisted · nothing lost on crash or close</text>
+
+  <!-- persistence ticks from stations to the ledger (skip uploading: tag zone) -->
+  <path class="flow" d="M126,170 V230"/>
+  <path class="flow" d="M442,170 V230"/>
+  <path class="flow" d="M758,170 V230"/>
+  <path class="flow" d="M916,170 V230"/>
+  <path class="flow" d="M1074,170 V230"/>
+
+  <!-- red: auto-resume — ledger back up into POLLING -->
+  <path class="flow-red" d="M600,230 V170" marker-end="url(#arrRed4)"/>
+  <text class="t-tag-red" x="630" y="306">— AUTO-RESUME: close mid-batch → relaunch → continues from state.json</text>
+
+  <!-- evidence tags -->
+  <text class="t-tag" x="60" y="346">136 IMAGES — ONE OVERNIGHT BATCH</text>
+  <text class="t-tag" x="60" y="366">IDEA → INSTALLED ON CLIENT'S MACHINE — 7 DAYS</text>
+  <text class="t-tag" x="60" y="386">MPO-IN-JPG CAMERA FORMAT BUG — ROOT-CAUSED AT BYTE LEVEL</text>
+
+  </g>
+
+  <!-- ============ TITLE BLOCK ============ -->
+  <rect class="frame" x="840" y="352" width="336" height="84" fill="#FAF8F3"/>
+  <line class="band-rule" x1="840" y1="380" x2="1176" y2="380"/>
+  <line class="band-rule" x1="840" y1="408" x2="1176" y2="408"/>
+  <line class="band-rule" x1="1060" y1="352" x2="1060" y2="436"/>
+  <text class="t-block-h" x="852" y="371" data-max-x="1052">STUDIO ONYX — LIFECYCLE</text>
+  <text class="t-block" x="1072" y="371" data-max-x="1168">FIG. 04</text>
+  <text class="t-block" x="852" y="398" data-max-x="1052">PYTHON · DESKTOP · 7 DAYS</text>
+  <text class="t-block" x="1072" y="398" data-max-x="1168">SHEET 1/1</text>
+  <text class="t-block" x="852" y="426" data-max-x="1052">CLIENT — WOLF EYES OPTICAL</text>
+  <text class="t-block" x="1072" y="426" data-max-x="1168">SCALE — NONE</text>
+</svg>

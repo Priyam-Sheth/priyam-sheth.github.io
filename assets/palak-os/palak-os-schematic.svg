@@ -1,0 +1,170 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="schemaTitle schemaDesc" font-family="'Fragment Mono','Courier New',monospace">
+  <title id="schemaTitle">Palak OS — System Schematic</title>
+  <desc id="schemaDesc">Engineering schematic of Palak OS: founders on Telegram, an agent layer with exfiltration guard and hive-mind store, the Mission Control Next.js control plane with scheduled operations, and business systems — Zoho Books, Zoho Inventory, WooCommerce. The daily-report flow is highlighted.</desc>
+
+  <style>
+    .sheet     { fill:#F4F1EA; }
+    .node      { fill:#FAF8F3; stroke:#141310; stroke-width:1.5; }
+    .node-hero { fill:#FAF8F3; stroke:#141310; stroke-width:2; }
+    .band-rule { stroke:#DDD8CE; stroke-width:1; }
+    .frame     { fill:none; stroke:#141310; stroke-width:1.5; }
+    .tick      { stroke:#141310; stroke-width:1.5; }
+    .t-title   { font-size:13px; font-weight:700; fill:#141310; letter-spacing:0.4px; }
+    .t-sub     { font-size:10.5px; fill:#6B6560; letter-spacing:0.3px; }
+    .t-band    { font-size:10px; fill:#6B6560; letter-spacing:2.2px; }
+    .t-tag     { font-size:10px; fill:#6B6560; letter-spacing:0.5px; }
+    .t-tag-red { font-size:10px; fill:#C8430A; letter-spacing:0.5px; }
+    .t-block   { font-size:10px; fill:#141310; letter-spacing:0.6px; }
+    .t-block-h { font-size:10.5px; font-weight:700; fill:#141310; letter-spacing:0.4px; }
+    .flow      { fill:none; stroke:#141310; stroke-width:1.25; stroke-dasharray:5 5; }
+    .flow-red  { fill:none; stroke:#C8430A; stroke-width:1.5;  stroke-dasharray:7 5; }
+    .anim .flow     { animation: march 1.6s linear infinite; }
+    .anim .flow-red { animation: march 2.2s linear infinite; }
+    @keyframes march { to { stroke-dashoffset: -10; } }
+    @media (prefers-reduced-motion: reduce) {
+      .anim .flow, .anim .flow-red { animation: none; }
+    }
+  </style>
+
+  <defs>
+    <marker id="arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L8,4 L0,8" fill="none" stroke="#141310" stroke-width="1.4"/>
+    </marker>
+    <marker id="arrRed" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L8,4 L0,8" fill="none" stroke="#C8430A" stroke-width="1.4"/>
+    </marker>
+  </defs>
+
+  <!-- ================= SHEET ================= -->
+  <rect class="sheet" x="0" y="0" width="1200" height="800"/>
+  <rect class="frame" x="24" y="24" width="1152" height="752"/>
+  <!-- corner ticks -->
+  <path class="tick" d="M24,44 V24 H44 M1156,24 H1176 V44 M1176,756 V776 H1156 M44,776 H24 V756" fill="none"/>
+
+  <g class="anim">
+
+  <!-- ================= BAND LABELS + RULES ================= -->
+  <text class="t-band" x="60" y="62">01 · OPERATORS</text>
+  <line class="band-rule" x1="185" y1="58" x2="1140" y2="58"/>
+  <text class="t-band" x="60" y="192">02 · AGENT LAYER</text>
+  <line class="band-rule" x1="206" y1="188" x2="1140" y2="188"/>
+  <text class="t-band" x="60" y="382">03 · CONTROL PLANE</text>
+  <line class="band-rule" x1="224" y1="378" x2="1140" y2="378"/>
+  <text class="t-band" x="60" y="572">04 · BUSINESS SYSTEMS</text>
+  <line class="band-rule" x1="250" y1="568" x2="1140" y2="568"/>
+
+  <!-- ================= 01 OPERATORS ================= -->
+  <rect class="node" x="140" y="88" width="180" height="48"/>
+  <text class="t-title" x="152" y="108">FOUNDER 01</text>
+  <text class="t-sub"   x="152" y="124">telegram · approvals</text>
+
+  <rect class="node" x="360" y="88" width="180" height="48"/>
+  <text class="t-title" x="372" y="108">FOUNDER 02</text>
+  <text class="t-sub"   x="372" y="124">telegram · reports</text>
+
+  <!-- ================= 02 AGENT LAYER ================= -->
+  <rect class="node" x="140" y="215" width="190" height="65"/>
+  <text class="t-title" x="152" y="237">TELEGRAM BOT</text>
+  <text class="t-sub"   x="152" y="253">node · pm2 · 24/7</text>
+  <text class="t-sub"   x="152" y="267">fire-and-forget handler</text>
+
+  <rect class="node" x="370" y="215" width="200" height="65"/>
+  <text class="t-title" x="382" y="237">CLAUDE AGENT SESSION</text>
+  <text class="t-sub"   x="382" y="253">resumable · turn-capped</text>
+  <text class="t-sub"   x="382" y="267">full-project context</text>
+
+  <rect class="node" x="610" y="215" width="180" height="65"/>
+  <text class="t-title" x="622" y="237">EXFIL GUARD</text>
+  <text class="t-sub"   x="622" y="253">5-pattern outbound scan</text>
+  <text class="t-sub"   x="622" y="267">single chokepoint</text>
+
+  <rect class="node" x="830" y="215" width="210" height="65"/>
+  <text class="t-title" x="842" y="237">HIVE-MIND STORE</text>
+  <text class="t-sub"   x="842" y="253">sqlite · wal</text>
+  <text class="t-sub"   x="842" y="267">logs · queue · memories</text>
+
+  <!-- ================= 03 CONTROL PLANE ================= -->
+  <rect class="node-hero" x="140" y="400" width="480" height="100"/>
+  <line class="band-rule" x1="140" y1="432" x2="620" y2="432"/>
+  <text class="t-title" x="152" y="422">MISSION CONTROL — NEXT.JS</text>
+  <text class="t-sub"   x="152" y="454">14 dashboard pages · 55+ api routes</text>
+  <text class="t-sub"   x="152" y="470">vendor bills → item groups → draft POs</text>
+  <text class="t-sub"   x="152" y="486">stock intelligence · ageing · sell-through</text>
+
+  <rect class="node" x="660" y="400" width="380" height="100"/>
+  <line class="band-rule" x1="660" y1="432" x2="1040" y2="432"/>
+  <text class="t-title" x="672" y="422">SCHEDULED OPERATIONS</text>
+  <text class="t-tag-red" x="672" y="454">19:30 IST mon–sat — daily business report</text>
+  <text class="t-sub"   x="672" y="470">every 30s — message-queue drain</text>
+  <text class="t-sub"   x="672" y="486">09:00 IST — morning briefing</text>
+
+  <!-- ================= 04 BUSINESS SYSTEMS ================= -->
+  <rect class="node" x="140" y="590" width="220" height="70"/>
+  <text class="t-title" x="152" y="612">ZOHO BOOKS</text>
+  <text class="t-sub"   x="152" y="628">invoices · payments · P&amp;L</text>
+  <text class="t-sub"   x="152" y="642">oauth2 · token cache 3500s</text>
+
+  <rect class="node" x="400" y="590" width="220" height="70"/>
+  <text class="t-title" x="412" y="612">ZOHO INVENTORY</text>
+  <text class="t-sub"   x="412" y="628">items · bills · stock</text>
+  <text class="t-sub"   x="412" y="642">357 bills / analytics sync</text>
+
+  <rect class="node" x="660" y="590" width="220" height="70"/>
+  <text class="t-title" x="672" y="612">WOOCOMMERCE + WP</text>
+  <text class="t-sub"   x="672" y="628">catalog · product media</text>
+  <text class="t-sub"   x="672" y="642">3-target image pipeline</text>
+
+  <!-- evidence callout -->
+  <text class="t-tag" x="920" y="612">~600 CALLS / SYNC</text>
+  <text class="t-tag" x="920" y="628">50-CONCURRENT BATCHES</text>
+  <text class="t-tag" x="920" y="644">100ms INTER-BATCH</text>
+
+  <!-- ================= FLOWS — INK (message loop, data) ============ -->
+  <!-- founder 01 -> bot -->
+  <path class="flow" d="M230,136 V215" marker-end="url(#arr)"/>
+  <!-- bot -> agent -->
+  <path class="flow" d="M330,247 H370" marker-end="url(#arr)"/>
+  <!-- agent -> guard -->
+  <path class="flow" d="M570,247 H610" marker-end="url(#arr)"/>
+  <!-- agent <-> mission control -->
+  <path class="flow" d="M470,280 V400" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <!-- mission control <-> hive-mind (routed above band 03, clear of all labels) -->
+  <path class="flow" d="M580,400 V360 H935 V280" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <!-- mission control <-> zoho inventory -->
+  <path class="flow" d="M510,500 V590" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <!-- mission control -> woocommerce -->
+  <path class="flow" d="M560,500 V570 H770 V590" marker-end="url(#arr)"/>
+
+  <!-- ================= FLOW — RED (daily report path) =============== -->
+  <!-- cron -> zoho books (fetch) -->
+  <path class="flow-red" d="M700,500 V555 H250 V590" marker-end="url(#arrRed)"/>
+  <!-- zoho books -> mission control (aggregate) -->
+  <path class="flow-red" d="M310,590 V545 H380 V500" marker-end="url(#arrRed)"/>
+  <!-- mission control -> guard -->
+  <path class="flow-red" d="M380,400 V340 H700 V280" marker-end="url(#arrRed)"/>
+  <!-- guard -> founders (report lands 19:30) -->
+  <path class="flow-red" d="M700,215 V170 H450 V136" marker-end="url(#arrRed)"/>
+  <path class="flow-red" d="M450,170 H230 V136" marker-end="url(#arrRed)"/>
+
+  <!-- red flow annotation (x708.. keeps clear of red H-line end x700+pad
+       and of the hive connector vertical at x935) -->
+  <text class="t-tag-red" x="708" y="330">— DAILY REPORT PATH</text>
+  <text class="t-tag" x="708" y="346">cron → books → guard → founders</text>
+
+  </g>
+
+  <!-- ============ TITLE BLOCK — 2-col grid, budgeted cells ============
+       col 1: x852..1052 (budget data-max-x=1052)
+       col 2: x1072..1168 (budget data-max-x=1168)
+       Every cell text carries data-max-x; svg_overlap_audit.py enforces. -->
+  <rect class="frame" x="840" y="692" width="336" height="84" fill="#FAF8F3"/>
+  <line class="band-rule" x1="840" y1="720" x2="1176" y2="720"/>
+  <line class="band-rule" x1="840" y1="748" x2="1176" y2="748"/>
+  <line class="band-rule" x1="1060" y1="692" x2="1060" y2="776"/>
+  <text class="t-block-h" x="852" y="711" data-max-x="1052">PALAK OS — SYSTEM SCHEMATIC</text>
+  <text class="t-block" x="1072" y="711" data-max-x="1168">FIG. 01</text>
+  <text class="t-block" x="852" y="738" data-max-x="1052">PM2-SUPERVISED · 24/7</text>
+  <text class="t-block" x="1072" y="738" data-max-x="1168">SHEET 1/1</text>
+  <text class="t-block" x="852" y="766" data-max-x="1052">CLIENT — PALAK ENTERPRISE</text>
+  <text class="t-block" x="1072" y="766" data-max-x="1168">SCALE — NONE</text>
+</svg>
