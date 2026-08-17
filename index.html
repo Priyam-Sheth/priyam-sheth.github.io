@@ -8,7 +8,8 @@
 <meta property="og:title" content="Priyam Sheth">
 <meta property="og:description" content="I build AI systems and production software for real businesses.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/og.png">
+<meta property="og:image" content="https://priyam-sheth.github.io/assets/og.png">
+<link rel="canonical" href="https://priyam-sheth.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FFFFFF' stroke='%23D9DEE3' stroke-width='1.5'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-weight='700' font-size='26' text-anchor='middle' fill='%23111827'%3EPS%3C/text%3E%3Crect x='16' y='49' width='32' height='3' rx='1.5' fill='%230F766E'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/sentient-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/general-sans-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -54,6 +55,14 @@
   <section class="projects" id="work">
     <h2 class="section-title r">Selected work</h2>
 
+    <!-- ===== THE ONE-CLIENT ARC: five systems, one client ===== -->
+    <div class="work-group r">
+      <p class="group-name">Palak Enterprise <span class="group-sub">· trading as Wolf Eyes and Palak Optical</span></p>
+      <p class="group-note">The five systems below were built for this one client, over an ongoing
+      relationship. Dealer ordering, daily operations, catalogue photography, stock reconciliation and
+      physical stock audits: one business, five systems.</p>
+    </div>
+
     <!-- CARD 01 — WOLF EYES -->
     <article class="card r" aria-label="B2B Ordering Platform, Wolf Eyes Eyewear">
       <div class="card-head">
@@ -61,6 +70,7 @@
           <h3 class="card-title">B2B Ordering Platform</h3>
           <p class="client">Wolf Eyes Eyewear</p>
         </div>
+        <p class="arc-tag mono">Palak Enterprise · 1 of 5</p>
       </div>
 
       <p class="body-copy">Wolf Eyes sells eyewear to dealers across India. I built the platform where those
@@ -74,6 +84,7 @@
         <li>Pricing tiers and approval chains: different dealers, different rules, automatically enforced</li>
         <li>Direct Zoho integration: every order lands in the company's real books, no manual entry</li>
         <li>Alerting: if logins or orders fail, the owner knows before a dealer complains</li>
+        <li>Live Commerce, shipped August 2026: live video shopping, dealers watch and order in the same session</li>
       </ul>
 
       <div class="gallery-wrap">
@@ -108,14 +119,14 @@
 
       <figure class="testimonial">
         <blockquote>Nayi site ekdum fast hai, aur catalogue ab premium lagta hai. Order karna itna easy ho
-        gaya ki dealers khud zyada orders punch kar rahe hain — aur admin panel se website manage karna
+        gaya ki dealers khud zyada orders punch kar rahe hain, aur admin panel se website manage karna
         pehle se kahin simple hai.</blockquote>
-        <figcaption>Co-founder · Wolf Eyes Eyewear</figcaption>
+        <figcaption>Tirth Boradia, Palak Enterprise</figcaption>
       </figure>
 
       <div class="card-foot">
-        <p class="status"><span class="status-dot" aria-hidden="true"></span>Live in production · ~1,600-product catalogue · launching to dealers now</p>
-        <p class="tech mono">Next.js · Fastify · PostgreSQL · Zoho Books</p>
+        <p class="status"><span class="status-dot" aria-hidden="true"></span>In production since June 2026 · ~1,600-product catalogue · real dealer use · Live Commerce shipped August 2026</p>
+        <p class="tech mono">Next.js · Fastify · Prisma · PostgreSQL · Zoho Books</p>
       </div>
     </article>
 
@@ -126,6 +137,7 @@
           <h3 class="card-title">Palak OS</h3>
           <p class="client">An AI employee for Palak Enterprise</p>
         </div>
+        <p class="arc-tag mono">Palak Enterprise · 2 of 5</p>
       </div>
 
       <p class="body-copy">Palak Enterprise runs on Zoho: books, inventory, CRM. I built them an AI that's
@@ -175,11 +187,11 @@
       </div>
 
       <figure class="testimonial">
-        <blockquote>Main ise roz use karta hoon — ab ye humare business ka sabse important hissa ban gaya
+        <blockquote>Main ise roz use karta hoon, ab ye humare business ka sabse important hissa ban gaya
         hai. Jo kaam pehle ghanton lete the, ab seconds mein hote hain, zero human error ke saath. Roz 7:30
-        ki report se pure din ka overview mil jata hai. Palak agent ab mera AI co-founder hai — har decision
+        ki report se pure din ka overview mil jata hai. Palak agent ab mera AI co-founder hai, har decision
         mein saath deta hai, aur team ke liye internal software bhi khud bana deta hai.</blockquote>
-        <figcaption>Co-founder · Palak Enterprise</figcaption>
+        <figcaption>Tirth Boradia, Palak Enterprise</figcaption>
       </figure>
 
       <div class="cta-row">
@@ -187,7 +199,7 @@
       </div>
 
       <div class="card-foot">
-        <p class="status"><span class="status-dot" aria-hidden="true"></span>Daily report at 7:30 PM · hasn't missed a day</p>
+        <p class="status"><span class="status-dot" aria-hidden="true"></span>Daily report at 7:30 PM · running since March 2026, no missed report as of August 2026</p>
         <p class="tech mono">Claude agents · Zoho Books/Inventory/CRM · Telegram</p>
       </div>
     </article>
@@ -199,6 +211,7 @@
           <h3 class="card-title">Studio Onyx</h3>
           <p class="client">Catalog photos, processed overnight</p>
         </div>
+        <p class="arc-tag mono">Palak Enterprise · 3 of 5</p>
       </div>
 
       <p class="body-copy">The eyewear client had hundreds of raw product photos that needed to become clean
@@ -221,13 +234,12 @@
         <li>A one-click desktop tool installed on the client's own computer</li>
         <li>AI image processing tuned for product photography</li>
         <li>Resumable batches: close it mid-run, it continues where it left off</li>
-        <li>Shipped from idea to installed app in 7 days</li>
       </ul>
 
       <figure class="testimonial">
         <blockquote>Pehle har photo ka editing cost alag tha, aur editor ko catalogue ready karne mein
         kaafi time lagta tha. Ab pura kaam kuch ghanton mein ho jata hai.</blockquote>
-        <figcaption>Co-founder · Wolf Eyes Eyewear</figcaption>
+        <figcaption>Tirth Boradia, Palak Enterprise</figcaption>
       </figure>
 
       <div class="card-foot">
@@ -236,7 +248,80 @@
       </div>
     </article>
 
-    <!-- CARD 04 — DONNA (personal register, quiet) -->
+    <!-- CARD 04 — INVENTORY RECONCILIATION ERP -->
+    <article class="card r" aria-label="Inventory Reconciliation ERP, government lens orders matched against stock">
+      <div class="card-head">
+        <div>
+          <h3 class="card-title">Inventory Reconciliation ERP</h3>
+          <p class="client">Government lens orders, matched against stock</p>
+        </div>
+        <p class="arc-tag mono">Palak Enterprise · 4 of 5</p>
+      </div>
+
+      <p class="body-copy">Palak Optical supplies ophthalmic lenses against government orders. Matching each
+      order line to what is actually on the shelf was done by hand in Excel, every day. I built the system
+      that does the matching, including the part a spreadsheet cannot do: finding a different lens that
+      still works for the patient.</p>
+
+      <h4 class="sub-label">What I built</h4>
+      <ul class="built-list">
+        <li>A two-pass allocation engine: exact stock matches first, substitutes second</li>
+        <li>Substitute matching that finds clinically acceptable lenses within a 0.25 dioptre tolerance</li>
+        <li>Every order line reconciled against live stock, no spreadsheet copy-paste</li>
+        <li>Results the buyer can act on directly: what is allocated, what is substituted, what is short</li>
+      </ul>
+
+      <blockquote class="pull-quote">
+        <p>Two to three hours of manual Excel matching every day now finishes in under 30 seconds, and
+        about 15% of stock was saved that would have been re-ordered unnecessarily.</p>
+      </blockquote>
+
+      <div class="card-foot">
+        <p class="status"><span class="status-dot" aria-hidden="true"></span>Live in production · results signed off by the client</p>
+        <p class="tech mono">React · Supabase (PostgreSQL) · Netlify</p>
+      </div>
+    </article>
+
+    <!-- CARD 05 — UICS -->
+    <article class="card r" aria-label="Unified Inventory Control System, real-time barcode stock audit">
+      <div class="card-head">
+        <div>
+          <h3 class="card-title">Unified Inventory Control System</h3>
+          <p class="client">Real-time barcode stock audit</p>
+        </div>
+        <p class="arc-tag mono">Palak Enterprise · 5 of 5</p>
+      </div>
+
+      <p class="body-copy">A full physical stock audit used to mean staff counting on separate sheets and
+      arguing about the totals afterwards. UICS lets several staff scan at the same time against one shared
+      live count. The SQL behind it sorts what they scan into expected stock, excess stock and unknown
+      stock, so the audit ends with three answers the owner can act on instead of one discrepancy column
+      nobody can use.</p>
+
+      <h4 class="sub-label">What I built</h4>
+      <ul class="built-list">
+        <li>Concurrent scanning: several staff, one shared live count, updating in real time</li>
+        <li>Custom SQL that separates expected, excess and unknown stock</li>
+        <li>Barcode scanners on the floor, with the count visible while it happens</li>
+        <li>An audit that closes with a clean result, not a pile of unexplained differences</li>
+      </ul>
+
+      <blockquote class="pull-quote">
+        <p>A full physical stock audit that took about 3 days now takes about 4 hours.</p>
+      </blockquote>
+
+      <div class="card-foot">
+        <p class="status"><span class="status-dot" aria-hidden="true"></span>Live in production · result signed off by the client</p>
+        <p class="tech mono">React · Supabase realtime (PostgreSQL) · barcode scanners</p>
+      </div>
+    </article>
+
+    <!-- ===== outside the client arc ===== -->
+    <div class="work-group r">
+      <p class="group-name">Built for myself <span class="group-sub">· same engineering, no client</span></p>
+    </div>
+
+    <!-- CARD 06 — DONNA (personal register, quiet) -->
     <article class="card card-quiet r" aria-label="Donna, my personal AI">
       <div class="card-head">
         <div>
@@ -252,7 +337,7 @@
       <ul class="built-list">
         <li>Permanent memory of everything I tell her, with a correction system so she stays accurate</li>
         <li>Answers from my context: my projects, my decisions, my history</li>
-        <li>Security first: PIN-locked, audit-logged, talks to no one else</li>
+        <li>Locked to one person: she answers to me and ignores everyone else, and every request is audit-logged</li>
         <li>The same memory grounds my coding tools: one brain, everywhere I work</li>
       </ul>
 
