@@ -1,4 +1,4 @@
-# Deploy — GitHub Pages (Quiet Luxury final)
+# Deploy — GitHub Pages (v2, 3 Sep 2026)
 
 ## Pre-push prune (one-time, before the first deploy)
 ```bash
@@ -28,7 +28,7 @@ Live in ~1 minute. `.nojekyll` is already in place.
 
 ## Post-domain migration
 When the client moves the platform off the app subdomain, swap the Wolf Eyes live link:
-`https://app.b2bwolfeyes.in` → `https://b2bwolfeyes.in` (one href in index.html).
+done 2 Sep 2026: the page links `https://b2bwolfeyes.in`.
 
 ## After the URL exists
 - Set the absolute OG image URL in index.html:
@@ -37,7 +37,7 @@ When the client moves the platform off the app subdomain, swap the Wolf Eyes liv
 - Optionally add `<link rel="canonical" href="https://priyam-sheth.github.io/">`
 
 ## What ships / what doesn't
-- Ships: index.html, src/quiet/, assets/fonts (7 files), assets/processed2/, assets/og.png, .nojekyll
+- Ships: index.html, src/v2/, assets/fonts (6 files), assets/processed2/, assets/portrait.webp, assets/og.png, .nojekyll
 - Dev-only (add to .gitignore or leave; they don't affect the page): node_modules, package*.json,
   scripts/, docs/, PRODUCT.md, DESIGN.md, .impeccable/, .agents/
 
@@ -45,4 +45,4 @@ When the client moves the platform off the app subdomain, swap the Wolf Eyes liv
 ```bash
 git add . && git commit -m "update" && git push
 ```
-Quality gate before every push: `npx impeccable detect` clean (or the script path above).
+Quality gate before every push: the verification harness clean and the detector printing `[]`.

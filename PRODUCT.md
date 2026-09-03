@@ -55,13 +55,13 @@ end to end.
 - Secondary: LinkedIn / GitHub
 - The line a visitor remembers: "One person, five production systems, running real businesses. I scope it, build it, and stay when it breaks." (Updated 2026-08-17 — see Audience shift above for why the previous line and the one-client alternative were both set aside.)
 - Belief ladder: (1) this is real shipped software, not claims → (2) it runs businesses like mine / businesses I'd hire for → (3) one person did all of this → (4) I can email him right now.
-- Proof on hand: blur-redacted production screenshots (Wolf Eyes B2B platform, Palak OS dashboards), the real 7:30 PM Telegram business report as delivered, a real before/after product-photo pair (Studio Onyx). All in `assets/processed2/`. Licenses in `docs/asset-licenses.md`.
+- Proof on hand: blur-redacted production screenshots (Wolf Eyes B2B platform incl. product page and mobile catalogue, Palak OS dashboards), the real 7:30 PM Telegram business report as delivered, a real before/after product-photo pair (Studio Onyx), repo-derived numbers dated 3 Sep 2026 (2,311 tests, 409 PRs since July, ~102k lines at launch, 47 screens, ~95 endpoints). All in `assets/processed2/`. Licenses in `docs/asset-licenses.md`.
 
 ## Brand Personality
 Plain, confident, warm. Premium-professional product site — a precision-made object, crisp and airy. The register is understated competence: every claim true and specific, tech names confined to small mono lines, no jargon in body copy. Warmth lives in the copy's voice, never in theatrics.
 
 ## Anti-references
-- Brand-theatrical portfolio sites (scroll-driven cinema, WebGL fog, monumental typography) — this project's own previous iterations are the anti-reference.
+- **Revised 3 Sep 2026 (Priyam's directive):** the quiet, static v1 was judged unsatisfying. v2 deliberately adds layered 3D depth, scroll feedback, a sticky case-study stack, live diagrams and demos, in the register of the best 2026 portfolio sites. What stays banned: WebGL fog for its own sake, monumental typography, scroll-hijacking, any motion that hides content, and anything the reader cannot switch off with reduced motion. See `docs/v2-plan.md`.
 - Methodology narrative of any kind: how the software gets built (AI team, agents, process) is never the story; what it does for the business is.
 - SaaS landing-page clichés: hero-metric blocks, gradient text, icon-card grids, eyebrow kickers on every section.
 - Inflated claims. Every sentence must stay literally true.
@@ -70,7 +70,7 @@ Plain, confident, warm. Premium-professional product site — a precision-made o
 1. Proof over polish-talk: real screenshots, real numbers, real status lines do the persuading.
 2. A non-technical reader follows every body sentence; the technical reader finds the stack in the mono lines.
 3. Two doors, no maze: every path ends at one of two prefilled emails.
-4. Quiet surface, engineered details: restraint in color and motion, precision in spacing, type, and micro-interaction.
+4. Engineered depth, honest surface: motion and layering carry the premium feel; every animated element shows real work (real screenshots, real numbers, real architecture). Demos with example data say so on the face.
 5. The page is complete without JavaScript; enhancement is additive only.
 
 ## Accessibility & Inclusion

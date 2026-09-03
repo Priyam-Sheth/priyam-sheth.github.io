@@ -1,37 +1,65 @@
-# Design
+# Design (v2, 3 Sep 2026)
 
-Crisp Cool White — the locked palette family (client spec). Skill passes refine values, tension, and type WITHIN this family; they do not flip it warm or dark.
+"Precision instrument, in daylight." Light ground, engineered depth, scroll that answers the hand,
+every number true. Files: `index.html`, `src/v2/site.css`, `src/v2/site.js`. The full brief and
+the reasoning behind every section is in `docs/v2-plan.md`.
 
 ## Theme
-Light only. Physical scene: a recruiter at a desk mid-afternoon, or an SMB owner on a phone in a bright shop — ambient light is high, the page must read like a printed spec sheet, not glow like a screen.
+Light only, locked. Physical scene: a hiring manager at a desk, an SMB owner on a phone in a bright
+shop. The Wolf Eyes screenshots are white UIs; on a dark ground they would float. One deliberate
+dark block exists (the system diagram) because glowing packet flows read on dark and the block
+is the page's single "machine room" moment. Nothing else inverts.
 
 ## Color
-- `--bg` #FFFFFF — pure white body ground
-- `--band` #F4F6F8 / `--band-2` #F3F4F6 — cool gray tonal bands for section rhythm
-- `--ink` #111827 (headings) · `--ink-body` #374151 · `--ink-dim` #646D7A (muted, AA on all grounds)
-- `--line` #D9DEE3 hairlines · `--line-strong` #D1D5DB interactive borders
-- Accent (ONE): `--accent` #0F766E deep teal — indexes, list ticks, status dots, links, one CTA style. Chosen over golden: the Wolf Eyes screenshots carry the client's own orange; teal keeps the site's voice distinct from the artifacts'.
-- Shadows: cool slate rgba(15,23,42, …) layered under 10% alpha.
-- Strategy: Restrained (tinted neutrals + one accent ≤10%).
+- `--bg` #FFFFFF · `--band` #F4F6F8 · `--band-2` #EEF1F4
+- `--ink` #111827 · `--ink-body` #374151 · `--ink-dim` #5B6472 (AA on every ground)
+- `--line` #D9DEE3 · `--line-strong` #C9CFD6
+- Accent, one: `--accent` #0F766E deep teal (`--accent-deep` #0B5C56 for text/links on light,
+  `--accent-lit` #2DD4BF on the dark block). The client's orange appears only inside screenshots.
+- Dark block: `--dark` #0B1418 · `--dark-2` #122028 · `--dark-text` #E9F1F3 · `--dark-dim` #9FB3BB
+- Strategy: restrained on light, committed inside the one dark block.
 
 ## Typography
-- Display: Sentient 500/700 (self-hosted woff2) — warm transitional serif, letterhead-professional; chosen by A/B against Clash Display and Author after two client rejections of sans displays. Serif justified per taste-skill: brand words demand warmth the cool palette can't carry; not Fraunces/Instrument.
-- Body: General Sans 400/500/600.
-- Mono: Fragment Mono 400 — small technical lines only (tech stacks, captions, labels).
-- Committed scale (~1.2): 13/15/17/20/25/39/74px tokens (--t-xs … --t-hero). Body measure ≤65ch. Labels are sentence-case sans 600 (eyebrow grammar banned). Mono only for technical content.
+- Display: Sentient 700 (500 for the hero lede). Chosen by Priyam over sans displays twice;
+  identity preserved.
+- Body and UI: General Sans 400/500/600.
+- Mono: Fragment Mono 400, only for technical strings (tech stacks, times in the timeline, SKUs).
+- Scale (~1.25): 13 / 15 / 17 / 21 / 26 / 33 / 41 / hero clamp(2.5rem, 4.7vw, 3.95rem).
+- No eyebrows. Section headings stand alone. The only numbered sequence on the page is
+  Scope / Build / Stay, which is a real sequence.
+
+## Shape and depth
+- Radius system: cards and sheets 20px, inner frames and demos 12px, buttons and pills full.
+- Shadows are cool slate, layered, under 15% alpha. Planes get a deeper three-layer shadow.
 
 ## Components
-- Card: #FFFFFF on band, 24px radius, 1px `--line` border, 3-layer cool shadow, static (lift only on actionable surfaces: doors, buttons).
-- Gallery: horizontal scroll-snap strip of framed screenshots (frame: `--band-2`, 14px radius, hairline, inner hairline on the image); desktop circular arrow buttons; native swipe on touch.
-- Buttons: pill; primary = ink-filled; default = white hairline; accent = teal outline → teal fill on hover.
-- Status line: teal dot + medium-weight sentence.
-- List: hairline-separated rows with a short teal tick, two columns ≥900px.
-
-## Layout
-- Content max 64rem; section padding clamp-based; full-bleed band via box-shadow spread.
-- Sticky glass nav a half-step cooler than the body.
+- **Stage** (hero): CSS 3D perspective container; four planes (laptop frame, phone frame, two
+  cards) carrying real screenshots. JS: cursor tilt via lerp, scroll separation per depth.
+  Static collage without JS or under reduced motion.
+- **Board**: the one marquee. True, dated status lines. Pauses on hover; wraps under reduced motion.
+- **Diagram**: inline SVG, 1080×560 viewBox, packets on `offset-path`, nodes are links.
+  Horizontal scroll on phones with a hint line.
+- **Sheet**: white card, 1px line, 20px radius. Sticky stack on ≥1000px wide and ≥720px tall
+  (JS sets each sheet's `top` so tall sheets pin bottom-in-view). Each sheet has its own visual
+  family: mosaic, phone + timeline, comparison slider, allocation table demo, bucket demo.
+- **Plate** (Donna): band-coloured, quieter register, small SVG.
+- **Doors**: two white cards on the band, the hero planes echoed behind at half opacity with a
+  vertical mask.
 
 ## Motion
-- Entrance: fade + 14px rise, once, 0.65s cubic-bezier(.22,1,.36,1), inline stagger delays; elements visible by default (reveals only when body.js).
-- Hover: card lift, button lift, arrow nudge — all ≤450ms, ease-out.
-- No pins, no scrub, no parallax. Reduced motion: everything static and complete.
+- Easing: `--ease-out` cubic-bezier(.22,1,.36,1); `--ease-expo` cubic-bezier(.16,1,.3,1) for the
+  plane entrance. Linear only for the marquee and packets. No bounce, no elastic.
+- Durations: UI ≤250ms; reveals 700ms; plane entrance 1.1s staggered 110ms.
+- Only transform, opacity, clip-path and filter animate. Scroll progress uses native
+  `animation-timeline: scroll()` with a JS fallback.
+- Reveals enhance a visible default: elements are visible without JS; JS hides only what is
+  below the fold, once.
+- Reduced motion: marquee wraps, stack becomes flow, planes still, tickers show final numbers,
+  packets rest at a third of their path, comparison slider does not nudge.
+
+## Verification
+`node <scratchpad>/verify.mjs <outdir>` renders desktop 1440×900, mobile 390×844, reduced motion,
+no-JS and 1280×720, screenshots every section, and reports console errors, 404s, horizontal
+overflow and CLS. Ship only when all five passes report none / 0 / < 0.01, and the impeccable
+detector (`node ~/.claude/skills/impeccable/scripts/detect.mjs --json index.html src/v2/site.css`)
+returns `[]`.
