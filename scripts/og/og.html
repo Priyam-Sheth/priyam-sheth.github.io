@@ -7,17 +7,17 @@
 @font-face{font-family:'Fragment Mono';src:url('http://localhost:8343/assets/fonts/fragment-mono-400.woff2') format('woff2');font-weight:400}
 *{margin:0;box-sizing:border-box}
 body{width:1200px;height:630px;overflow:hidden;background:#F5F4EF;font-family:'General Sans',sans-serif;color:#16181D;position:relative;padding:22px}
-.plate{position:relative;width:100%;height:100%;border-radius:34px;overflow:hidden;background:url('http://localhost:8343/assets/paint/dusk.webp') center/cover;text-align:center;padding-top:56px}
+.plate{position:relative;width:100%;height:100%;border-radius:34px;overflow:hidden;background:url('http://localhost:8343/assets/paint/dusk.webp') center/cover;text-align:center;padding-top:40px}
 .mark{font-family:'Fragment Mono',monospace;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#0B5C56}
 .mark::before,.mark::after{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7;vertical-align:middle;margin:0 10px}
-h1{font-family:'Sentient',serif;font-weight:400;font-size:64px;line-height:1.04;letter-spacing:-.015em;margin:18px auto 0;max-width:16ch}
+h1{font-family:'Sentient',serif;font-weight:400;font-size:56px;line-height:1.04;letter-spacing:-.015em;margin:18px auto 0;max-width:16ch}
 h1 em{font-style:italic}
-p{font-size:21px;color:#3A3F48;margin:16px auto 0;max-width:44ch;line-height:1.4}
-.say{position:absolute;left:50%;bottom:96px;transform:translateX(-50%);display:flex;align-items:center;gap:12px;padding:12px 18px;border-radius:999px;background:#16181D;color:#fff;font-family:'Fragment Mono',monospace;font-size:15px;box-shadow:0 12px 30px rgba(22,24,29,.28);white-space:nowrap}
+p{font-size:19px;color:#3A3F48;margin:14px auto 0;max-width:48ch;line-height:1.35}
+.say{position:absolute;left:50%;bottom:78px;transform:translateX(-50%);display:flex;align-items:center;gap:12px;padding:12px 18px;border-radius:999px;background:#16181D;color:#fff;font-family:'Fragment Mono',monospace;font-size:15px;box-shadow:0 12px 30px rgba(22,24,29,.28);white-space:nowrap}
 .say .who{color:#FFD84D;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
 .say .ok{color:#5FE0CF;font-size:12px;letter-spacing:.1em}
 .bars{display:inline-flex;gap:2px;align-items:flex-end;height:14px}.bars i{width:3px;background:#FFD84D;border-radius:2px}
-.win{position:absolute;left:50%;bottom:-30px;transform:translateX(-50%);width:640px;height:118px;background:#fff;border-radius:16px 16px 0 0;box-shadow:0 18px 40px rgba(22,24,29,.14);text-align:left}
+.win{position:absolute;left:50%;bottom:-48px;transform:translateX(-50%);width:640px;height:118px;background:#fff;border-radius:16px 16px 0 0;box-shadow:0 18px 40px rgba(22,24,29,.14);text-align:left}
 .bar{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid rgba(22,24,29,.1);background:#FAFAF8;border-radius:16px 16px 0 0;font-weight:600;font-size:15px}
 .dots{display:inline-flex;gap:5px}.dots i{width:10px;height:10px;border-radius:50%}.dots i:nth-child(1){background:#FF5F57}.dots i:nth-child(2){background:#FEBC2E}.dots i:nth-child(3){background:#28C840}
 .meta{margin-left:auto;font-family:'Fragment Mono',monospace;font-size:12px;letter-spacing:.1em;color:#6B717C;text-transform:uppercase;font-weight:400}
@@ -26,9 +26,9 @@ p{font-size:21px;color:#3A3F48;margin:16px auto 0;max-width:44ch;line-height:1.4
 .name b{font-weight:600;color:#16181D}
 </style></head><body>
 <div class="plate">
-  <span class="mark">Priyam Sheth · AI systems builder</span>
-  <h1>Tell your business what to do. <em>Watch it happen.</em></h1>
-  <p>I build AI employees and the production systems under them. One person, five systems, running every day.</p>
+  <img src="http://localhost:8343/assets/logo.svg" width="44" height="44" style="display:block;margin:0 auto 14px;border-radius:12px"><span class="mark">Priyam Sheth · AI systems builder</span>
+  <h1>Explain your business to me. <em>I'll build the AI that does the work.</em></h1>
+  <p>AI employees and the production systems under them, built for real businesses. One person, five systems, running every day.</p>
   <div class="say"><span class="who">Founder says</span><span class="bars"><i style="height:40%"></i><i style="height:90%"></i><i style="height:60%"></i><i style="height:100%"></i><i style="height:50%"></i></span>“Kal ka sales kitna tha?”<span class="ok">✓ ANSWERED FROM ZOHO</span></div>
   <div class="win"><div class="bar"><span class="dots"><i></i><i></i><i></i></span>Palak Enterprise Chatbot<span class="meta">simulation · real format</span></div><div class="msg">Kal ka sales kitna tha?</div></div>
 </div>

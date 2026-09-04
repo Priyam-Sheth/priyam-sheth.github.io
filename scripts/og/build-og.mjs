@@ -7,7 +7,7 @@ import { fileURLToPath, pathToFileURL } from 'url';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..', '..');
-const MIME = { '.webp': 'image/webp', '.woff2': 'font/woff2', '.png': 'image/png' };
+const MIME = { '.webp': 'image/webp', '.woff2': 'font/woff2', '.png': 'image/png', '.svg': 'image/svg+xml' };
 const srv = http.createServer((req, res) => {
   const p = join(ROOT, decodeURIComponent(req.url.split('?')[0]));
   if (!existsSync(p)) { res.writeHead(404); return res.end(); }
