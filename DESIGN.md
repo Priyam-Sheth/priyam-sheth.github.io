@@ -44,8 +44,12 @@ plates, not the page ground. One dark plate (numbers) and a dark footer.
   as blurred pills. Fixed 20rem height, scrolls inside. Labelled "simulation · real format".
 - **Steps**: three cards with painted tops holding one real object each (a locked decision, the
   green gate, a Telegram alert), numbered 01 to 03 because they are a real sequence.
-- **Tabs + stage**: five tabs switch panels; the stage's painting changes with the panel.
+- **Tabs + stage**: six tabs switch panels (Live Commerce has the night painting); the stage's painting changes with the panel.
   Each panel: mark, h3, lede, then "you do" card → arrow → app window, then a result line.
+- **Strip**: a scroll-snap gallery of framed screenshots with captions and arrow buttons, on a
+  translucent tray so captions read on any painting. Used on the Wolf Eyes and Live Commerce panels.
+- **Phones**: two phone frames side by side inside an app window (Live Commerce: stream + sheet).
+- **Facts**: a three-column grid of measured claims, serif value with one italic word, mono-free.
 - **VS**: two cards, by hand vs with the system, with bars that grow on entry.
 - **Screen**: a framed area with two pill marquees (the only marquees on the page).
 - **Stats**: four cells on the night plate, counters tick up once.

@@ -10,6 +10,10 @@
 | Grain overlay | generated in-house (inline SVG feTurbulence) | ours | SHIPPED — 2%-alpha neutral grain |
 | Eyewear photography (before/after) | client-supplied (Wolf Eyes, named with permission) | client permission | SHIPPED — Studio Onyx card |
 | Product/UI screenshots (blur-redacted) | client-supplied, sensitive regions blurred | client permission | SHIPPED — Wolf Eyes + Palak OS galleries |
+| `assets/wolfeyes/*.webp` (18) | captured 4 Sep 2026 from the production build running locally with demo accounts and demo prices; admin email blurred; the Live Commerce video feed is a local simulated stream made from a Wolf Eyes product photo | client permission (Wolf Eyes named with permission; demo data) | SHIPPED — Wolf Eyes and Live Commerce panels, captions state demo data and simulated feed |
+| `assets/paint/*.webp` (4) | generated in-house by `scripts/paint.py` | ours | SHIPPED — painted panels |
+| `assets/logos/*.svg` | Simple Icons (CC0), official brand marks used nominatively | CC0 / trademark fair use | SHIPPED — stack pills, Telegram windows |
+| `assets/logo.svg` | designed in-house | ours | SHIPPED — mark |
 | Real 7:30 Telegram report | client-supplied, URL + ₹ blurred | client permission | SHIPPED — Palak OS gallery lead plate |
 | `assets/portrait.webp` | owner-supplied headshot (crop + webp derivative; source jpeg pruned at deploy) | owner | SHIPPED — hero portrait |
 | Testimonials (3, Hinglish) | client-approved verbatim quotes | client permission | SHIPPED — project cards |

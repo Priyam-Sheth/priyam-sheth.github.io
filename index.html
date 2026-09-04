@@ -116,6 +116,7 @@
     <p class="sub r" style="--d:120ms">Pick a system. Every window is a real production screen or a live demo of the real logic.</p>
     <div class="tabs r" style="--d:180ms" role="tablist" aria-label="Systems">
       <button class="tab" role="tab" aria-selected="true" aria-controls="p-wolf" id="t-wolf">Wolf Eyes B2B</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-live" id="t-live">Live Commerce</button>
       <button class="tab" role="tab" aria-selected="false" aria-controls="p-palak" id="t-palak">Palak OS</button>
       <button class="tab" role="tab" aria-selected="false" aria-controls="p-onyx" id="t-onyx">Studio Onyx</button>
       <button class="tab" role="tab" aria-selected="false" aria-controls="p-erp" id="t-erp">Lens ERP</button>
@@ -126,15 +127,65 @@
 
       <!-- Wolf Eyes -->
       <div class="panel active" id="p-wolf" role="tabpanel" aria-labelledby="t-wolf" data-paint="dusk">
-        <div class="panel-head"><p class="mark">Dealer ordering · Wolf Eyes B2B</p><h3>A dealer orders. <em>The books update.</em></h3><p>Opticians across India log in, see their own prices, and order. Each order lands in Zoho Books as a draft sales order. Nobody retypes anything.</p></div>
+        <div class="panel-head"><p class="mark">Dealer ordering · Wolf Eyes B2B</p><h3>A dealer orders. <em>The books update.</em></h3><p>Opticians, distributors and reps across India sign in, see their own negotiated prices, and order from a 1,500-product catalogue. Each order lands in Zoho Books as a draft sales order. Nobody retypes anything.</p></div>
         <div class="flow">
           <div class="you"><span class="k">A dealer does <span class="bars" aria-hidden="true"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i></span></span><p class="q">Opens the catalogue on a phone, taps WE18004 in colour C1, quantity 6, Place order.<span class="cur" aria-hidden="true"></span></p></div>
           <div class="go" aria-hidden="true">&rarr;</div>
-          <div class="app"><div class="win-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="win-title">Wolf Eyes admin</span><span class="win-meta">production</span></div>
-            <img src="assets/processed2/we-order-detail.webp" alt="The order in the admin console with its audit trail, amounts blurred" width="1400" height="961" loading="lazy" decoding="async">
-            <div class="cap"><span>Order with audit trail</span><b>→ draft sales order in Zoho Books</b></div></div>
+          <div class="app"><div class="win-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="win-title">Wolf Eyes B2B · dealer catalogue</span><span class="win-meta">production build</span></div>
+            <img src="assets/wolfeyes/dealer-catalogue.webp" alt="The dealer catalogue: sunglasses with colour swatches, SRP and the dealer's own price on every card" width="1600" height="1000" loading="lazy" decoding="async">
+            <div class="cap"><span>Own prices on every card · stock badges live from Zoho</span><b>→ draft sales order in Zoho Books</b></div></div>
         </div>
-        <p class="result">In production since <b>11 June 2026</b><span class="sep">·</span><b>2,311</b> automated tests<span class="sep">·</span>Live Commerce shipped <b>Aug 2026</b><span class="sep">·</span><a href="https://b2bwolfeyes.in" target="_blank" rel="noopener">b2bwolfeyes.in</a></p>
+        <div class="strip-wrap">
+          <div class="strip-bar"><span class="fine">47 screens at launch · a few of them</span><div class="strip-nav" aria-hidden="true"><button type="button" data-prev>&larr;</button><button type="button" data-next>&rarr;</button></div></div>
+          <div class="gallery" data-gallery tabindex="0" aria-label="Wolf Eyes platform screens, scrollable">
+            <figure><div class="shot"><img src="assets/processed2/we-pdp.webp" alt="A product page with the dealer price blurred" width="1600" height="1039" loading="lazy" decoding="async"></div><figcaption><b>Product page.</b> Colours, stock, the dealer's tier price, zoom.</figcaption></figure>
+            <figure><div class="shot"><img src="assets/wolfeyes/dealer-home.webp" alt="A dealer's home: the three brands, recent orders with their approval status" width="1600" height="1000" loading="lazy" decoding="async"></div><figcaption><b>Dealer home.</b> Three brands, recent orders, where each one is in the approval flow.</figcaption></figure>
+            <figure class="tall"><div class="shot"><img src="assets/wolfeyes/dealer-catalogue-phone.webp" alt="The catalogue on a phone" width="780" height="1688" loading="lazy" decoding="async"></div><figcaption><b>On a phone.</b> Most dealers order from one.</figcaption></figure>
+            <figure><div class="shot"><img src="assets/wolfeyes/admin-orders.webp" alt="The admin orders list across dealers, reps and channels" width="1600" height="1000" loading="lazy" decoding="async"></div><figcaption><b>Every order.</b> Across five roles and three channels, with its status in the approval flow.</figcaption></figure>
+            <figure><div class="shot"><img src="assets/processed2/we-order-detail.webp" alt="An order with its audit trail, amounts blurred" width="1400" height="961" loading="lazy" decoding="async"></div><figcaption><b>One order.</b> Its audit trail, line edits and the Zoho mirror.</figcaption></figure>
+            <figure><div class="shot"><img src="assets/wolfeyes/admin-catalogue.webp" alt="Catalogue curation: 1,557 products with visibility and image eligibility" width="1600" height="1000" loading="lazy" decoding="async"></div><figcaption><b>Catalogue curation.</b> A product cannot be shown without a price and an image.</figcaption></figure>
+            <figure><div class="shot"><img src="assets/wolfeyes/admin-health.webp" alt="System health: scheduled jobs, backups, data integrity checks and stuck orders" width="1600" height="1000" loading="lazy" decoding="async"></div><figcaption><b>System health.</b> Every value read from a durable signal, never from "a process is running".</figcaption></figure>
+            <figure><div class="shot"><img src="assets/wolfeyes/admin-hierarchy.webp" alt="Account hierarchy: reps, distributors and dealers across three channels" width="1600" height="1000" loading="lazy" decoding="async"></div><figcaption><b>Hierarchy.</b> Reps, distributors and dealers; pricing inherits down the tree.</figcaption></figure>
+          </div>
+          <p class="strip-note fine">Production build, demo accounts and demo prices · live platform at b2bwolfeyes.in</p>
+        </div>
+        <p class="result">In production since <b>11 June 2026</b><span class="sep">·</span><b>2,311</b> automated tests<span class="sep">·</span><b>~95</b> endpoints<span class="sep">·</span><b>21</b> tables<span class="sep">·</span><a href="https://b2bwolfeyes.in" target="_blank" rel="noopener">b2bwolfeyes.in</a></p>
+      </div>
+
+      <!-- Live Commerce -->
+      <div class="panel" id="p-live" role="tabpanel" aria-labelledby="t-live" data-paint="night">
+        <div class="panel-head"><p class="mark">The new one · Live Commerce</p><h3>Go live. <em>Dealers order while you talk.</em></h3><p>A live video showing for the dealer network, shipped inside the same platform in August 2026. The operator holds up a frame and taps it; the card lands on every dealer's phone at that dealer's own price, and they add to their cart without leaving the stream.</p></div>
+        <div class="flow">
+          <div class="you"><span class="k">The operator does <span class="bars" aria-hidden="true"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i></span></span><p class="q">Schedules the showing, adds dealers to the guest list, sends the WhatsApp invite, presses Check and go live, holds up WE 6267 and taps it.<span class="cur" aria-hidden="true"></span></p></div>
+          <div class="go" aria-hidden="true">&rarr;</div>
+          <div class="app"><div class="win-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="win-title">What the dealer sees</span><span class="win-meta">production build</span></div>
+            <div class="phones">
+              <div class="phone back"><img src="assets/wolfeyes/live-dealer-phone.webp" alt="The live stream on a dealer's phone with the spotlight strip: WE Sunglass 6267, SRP and dealer price, View" width="780" height="1688" loading="lazy" decoding="async"></div>
+              <div class="phone"><img src="assets/wolfeyes/live-dealer-phone-sheet.webp" alt="The product sheet over the stream: gallery, SRP, dealer price, a quantity per colour, Add to cart" width="780" height="1688" loading="lazy" decoding="async"></div>
+            </div>
+            <div class="cap"><span>Spotlight strip → product sheet, video keeps playing</span><b>→ same cart, same Zoho order</b></div></div>
+        </div>
+        <ul class="facts" aria-label="What was measured and decided">
+          <li><span class="v">under <em>1 s</em></span><span class="l">from the operator's tap to the card on the dealer's frame, carried inside the video as timed metadata, reconciled every 30 s if a cue is dropped</span></li>
+          <li><span class="v">+1.27 s <em>flat</em></span><span class="l">sync error stayed constant while total lag varied 9× (2 s desktop to 18 s iPhone) in the proof of concept, the test the whole feature rests on</span></li>
+          <li><span class="v">720 × 1280 <em>HD</em></span><span class="l">vertical channel at 3,000 kbps, chosen because eyewear is a detail product and colour and finish decide orders</span></li>
+          <li><span class="v">only dealers <em>buy</em></span><span class="l">reps, distributors and admins watch view-only; every price comes from the same server-side tier resolver as the catalogue</span></li>
+          <li><span class="v">one <em>switch</em></span><span class="l">hides the whole feature from every dealer instantly; ordering and the catalogue are untouched, and the live layer never touches money</span></li>
+          <li><span class="v">runs <em>without me</em></span><span class="l">stream setup, guest lists, preflight checks, stream health and ending the session are all in the owner's panel, in plain language</span></li>
+        </ul>
+        <div class="strip-wrap">
+          <div class="strip-bar"><span class="fine">The operator's side</span><div class="strip-nav" aria-hidden="true"><button type="button" data-prev>&larr;</button><button type="button" data-next>&rarr;</button></div></div>
+          <div class="gallery" data-gallery tabindex="0" aria-label="Live Commerce operator screens, scrollable">
+            <figure><div class="shot"><img src="assets/wolfeyes/live-sessions.webp" alt="All sessions: Live Commerce is on, a session on air, the schedule form" width="1600" height="1000" loading="lazy" decoding="async"></div><figcaption><b>All sessions.</b> The day-to-day switch, what is on air, schedule the next one as a practice run.</figcaption></figure>
+            <figure><div class="shot"><img src="assets/wolfeyes/live-console.webp" alt="Today's session: on air now, show a product, your stream, who's watching, ending the session" width="1600" height="1000" loading="lazy" decoding="async"></div><figcaption><b>Today's session.</b> Feature a product, see the stream, end it three different ways.</figcaption></figure>
+            <figure><div class="shot"><img src="assets/wolfeyes/live-guests.webp" alt="Who can watch: search dealers, the guest list, Send on WhatsApp" width="1600" height="1000" loading="lazy" decoding="async"></div><figcaption><b>Who can watch.</b> Invited dealers only; everyone else is not even told. Invites go out on WhatsApp.</figcaption></figure>
+            <figure><div class="shot"><img src="assets/wolfeyes/live-dealer-desktop.webp" alt="The dealer's desktop view: vertical stream beside the product sheet" width="1600" height="1000" loading="lazy" decoding="async"></div><figcaption><b>On a laptop.</b> The vertical stream beside the sheet.</figcaption></figure>
+            <figure><div class="shot"><img src="assets/wolfeyes/live-setup.webp" alt="Streaming setup: OBS server, stream key, video settings with the reasons beside each number" width="1600" height="1167" loading="lazy" decoding="async"></div><figcaption><b>Streaming setup.</b> Every OBS number with the reason beside it, so the owner never has to call.</figcaption></figure>
+            <figure><div class="shot"><img src="assets/wolfeyes/live-health.webp" alt="Stream health: not receiving anything from OBS, what we are receiving versus what it should be" width="1600" height="1000" loading="lazy" decoding="async"></div><figcaption><b>Stream health.</b> Health is a claim that needs evidence; a silent stream is never shown as green.</figcaption></figure>
+          </div>
+          <p class="strip-note fine">Production build running locally with demo data. The video feed is a simulated stream for these screenshots.</p>
+        </div>
+        <p class="result">Shipped <b>August 2026</b><span class="sep">·</span>AWS IVS<span class="sep">·</span>timed metadata cues<span class="sep">·</span>ES384 playback tokens<span class="sep">·</span>built in seven slices with a failure-mode register before each</p>
       </div>
 
       <!-- Palak OS -->
@@ -332,7 +383,7 @@
   <div class="wrap">
     <div class="foot">
       <div><a class="wordmark" href="#top"><img class="logo" src="assets/logo.svg" alt="" width="28" height="28">Priyam Sheth</a><p class="tag">AI systems builder</p></div>
-      <div><h4>Work</h4><ul><li><a href="#see" data-open-tab="p-wolf">Wolf Eyes B2B</a></li><li><a href="#see" data-open-tab="p-palak">Palak OS</a></li><li><a href="#see" data-open-tab="p-onyx">Studio Onyx</a></li><li><a href="#see" data-open-tab="p-erp">Lens ERP</a></li><li><a href="#see" data-open-tab="p-uics">UICS</a></li></ul></div>
+      <div><h4>Work</h4><ul><li><a href="#see" data-open-tab="p-wolf">Wolf Eyes B2B</a></li><li><a href="#see" data-open-tab="p-live">Live Commerce</a></li><li><a href="#see" data-open-tab="p-palak">Palak OS</a></li><li><a href="#see" data-open-tab="p-onyx">Studio Onyx</a></li><li><a href="#see" data-open-tab="p-erp">Lens ERP</a></li><li><a href="#see" data-open-tab="p-uics">UICS</a></li></ul></div>
       <div><h4>Method</h4><ul><li><a href="#how">How I work</a></li><li><a href="#vs">By hand vs the system</a></li><li><a href="#numbers">Numbers</a></li><li><a href="#love">The client's words</a></li></ul></div>
       <div><h4>Me</h4><ul><li><a href="#about">About</a></li><li><a href="https://github.com/Priyam-Sheth" rel="noopener">GitHub</a></li><li><a href="https://www.linkedin.com/in/priyam-sheth-680874bb" rel="noopener">LinkedIn</a></li><li><a href="mailto:priyamsheth777@gmail.com">Email</a></li></ul></div>
     </div>

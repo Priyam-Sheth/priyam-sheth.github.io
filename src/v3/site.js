@@ -165,6 +165,18 @@
   const tio = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { run(en.target); tio.unobserve(en.target); } }), { threshold: 0.6 });
   $$('[data-n]').forEach(el => tio.observe(el));
 
+  /* ---------- screenshot strips: arrows + keyboard ---------- */
+  $$('.strip-wrap').forEach(w => {
+    const g = $('[data-gallery]', w), prev = $('[data-prev]', w), next = $('[data-next]', w);
+    if (!g) return;
+    const step = () => { const f = g.querySelector('figure'); return f ? f.getBoundingClientRect().width + 14 : g.clientWidth * .8; };
+    const ends = () => { if (prev) prev.disabled = g.scrollLeft <= 4; if (next) next.disabled = g.scrollLeft >= g.scrollWidth - g.clientWidth - 4; };
+    prev?.addEventListener('click', () => g.scrollBy({ left: -step(), behavior: REDUCED ? 'auto' : 'smooth' }));
+    next?.addEventListener('click', () => g.scrollBy({ left: step(), behavior: REDUCED ? 'auto' : 'smooth' }));
+    g.addEventListener('scroll', ends, { passive: true }); ends();
+    g.addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); g.scrollBy({ left: e.key === 'ArrowRight' ? step() : -step() }); } });
+  });
+
   /* ---------- copy email ---------- */
   $$('[data-copy]').forEach(b => b.addEventListener('click', async () => {
     try { await navigator.clipboard.writeText(b.dataset.copy); b.dataset.done = '1'; const t = b.textContent; b.textContent = 'Copied'; setTimeout(() => { b.textContent = t; b.dataset.done = ''; }, 1600); }

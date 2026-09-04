@@ -45,7 +45,7 @@ async function pass(tag, opts, { fullPage = true, sections = true } = {}) {
   }
   // tabs: shoot each 'see it work' panel (desktop)
   if (tag === 'desk' || tag === 'mob') {
-    for (const id of ['t-palak', 't-onyx', 't-erp', 't-uics']) {
+    for (const id of ['t-live', 't-palak', 't-onyx', 't-erp', 't-uics']) {
       try { await pg.click('#' + id); await pg.evaluate(() => document.querySelector('#see').scrollIntoView({ behavior: 'instant' })); await pg.waitForTimeout(2600); await pg.screenshot({ path: join(OUT, `${tag}-tab-${id.slice(2)}.png`) }); } catch (e) { console.log('tab', id, e.message.slice(0, 80)); }
     }
     try { await pg.evaluate(() => scrollTo({ top: 0, behavior: 'instant' })); await pg.click('[data-script="report"]'); await pg.waitForTimeout(3200); await pg.screenshot({ path: join(OUT, `${tag}-chat-report.png`) }); } catch (e) { console.log('chat', e.message.slice(0, 80)); }
@@ -60,7 +60,7 @@ async function pass(tag, opts, { fullPage = true, sections = true } = {}) {
     height: document.documentElement.scrollHeight,
     overflow: document.documentElement.scrollWidth > innerWidth ? (document.documentElement.scrollWidth - innerWidth) : 0,
     cls: window.__cls,
-    wide: [...document.querySelectorAll('body *')].filter(el => { const r = el.getBoundingClientRect(); return r.right > innerWidth + 2 && getComputedStyle(el).position !== 'fixed' && !el.closest('.rows, .stage'); }).slice(0, 6).map(el => el.tagName + '.' + el.className),
+    wide: [...document.querySelectorAll('body *')].filter(el => { const r = el.getBoundingClientRect(); return r.right > innerWidth + 2 && getComputedStyle(el).position !== 'fixed' && !el.closest('.rows, .stage, .gallery'); }).slice(0, 6).map(el => el.tagName + '.' + el.className),
   })); } catch (e) { info = 'evaluate skipped: ' + String(e.message).slice(0, 80); }
   console.log(`[${tag}]`, JSON.stringify(info), 'errors:', errs.length ? errs : 'none', 'missing:', missing.length ? missing : 'none');
   await ctx.close();
