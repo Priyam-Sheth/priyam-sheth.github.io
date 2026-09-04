@@ -173,3 +173,25 @@ The video's seven principles, mapped to this build:
 - Footer location: keep "Ahmedabad, India", drop it, or switch to Paris on arrival.
 - Push to GitHub Pages: the build is committed on a branch; pushing is a one-line command left
   to Priyam.
+
+---
+
+## Addendum, 4 Sep 2026: v3 replaced v2
+
+Priyam reviewed v2 and rejected it as "nothing new or innovative", asked for a from-scratch
+redesign that would impress top UI/UX designers, and named heylemon.ai as the reference from the
+video. v3 borrows Lemon's *language* and keeps our own palette, objects and copy:
+
+- Painted panels with big radii, painted in code (`scripts/paint.py`, numpy + Pillow: colour
+  fields, brushed displacement, hill silhouettes, horizontal streaks, grain).
+- One light serif (Sentient 300/400 with italics, pulled from Fontshare) with italic emphasis.
+- Small mono chapter marks with dots, used at the top of each plate.
+- The Lemon device: "you say it" dark bar plus a real app window where the result appears.
+  For Priyam that became an interactive Telegram simulation of Palak OS in the hero, and a
+  tabbed "See it work" stage with five real windows (production screenshot, before/after slider,
+  allocation demo, bucket demo).
+- By-hand vs the-system comparison, a pill marquee inside a screen frame, a night plate of
+  numbers, a wall of the client's words with marigold highlights, and a rose close.
+
+The v2 planes, diagram and sticky stack are gone. Files: `src/v3/`, `assets/paint/`,
+`scripts/paint.py`, `scripts/og/`.

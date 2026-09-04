@@ -18,7 +18,7 @@ const srv = http.createServer((req, res) => {
   createReadStream(p).pipe(res);
 }).listen(8342);
 
-const SECTIONS = ['.hero', '.board', '#system', '#wolf-eyes', '#palak-os', '#studio-onyx', '#erp', '#uics', '#donna', '#method', '#about', '#contact'];
+const SECTIONS = ['.hero', '#strip', '#how', '#see', '#vs', '#layers', '#numbers', '#love', '#about', '#contact'];
 const b = await chromium.launch();
 
 async function pass(tag, opts, { fullPage = true, sections = true } = {}) {
@@ -43,12 +43,12 @@ async function pass(tag, opts, { fullPage = true, sections = true } = {}) {
       await pg.screenshot({ path: join(OUT, `${tag}-${String(i + 1).padStart(2, '0')}-${SECTIONS[i].replace(/[#.]/g, '')}.png`) });
     }
   }
-  // stack mid-transition sample (desktop): halfway between sheet 1 and 2
-  if (tag === 'desk') {
-    const y = await pg.evaluate(() => { const a = document.querySelector('#palak-os'); return a.getBoundingClientRect().top + scrollY - innerHeight * 0.55; });
-    await pg.evaluate(v => scrollTo({ top: v, behavior: 'instant' }), y);
-    await pg.waitForTimeout(600);
-    await pg.screenshot({ path: join(OUT, `${tag}-stack-mid.png`) });
+  // tabs: shoot each 'see it work' panel (desktop)
+  if (tag === 'desk' || tag === 'mob') {
+    for (const id of ['t-palak', 't-onyx', 't-erp', 't-uics']) {
+      try { await pg.click('#' + id); await pg.evaluate(() => document.querySelector('#see').scrollIntoView({ behavior: 'instant' })); await pg.waitForTimeout(2600); await pg.screenshot({ path: join(OUT, `${tag}-tab-${id.slice(2)}.png`) }); } catch (e) { console.log('tab', id, e.message.slice(0, 80)); }
+    }
+    try { await pg.evaluate(() => scrollTo({ top: 0, behavior: 'instant' })); await pg.click('[data-script="report"]'); await pg.waitForTimeout(3200); await pg.screenshot({ path: join(OUT, `${tag}-chat-report.png`) }); } catch (e) { console.log('chat', e.message.slice(0, 80)); }
   }
   if (fullPage) {
     try { await pg.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 500) { scrollTo(0, y); await new Promise(r => setTimeout(r, 40)); } scrollTo(0, 0); }); } catch {}
@@ -60,7 +60,7 @@ async function pass(tag, opts, { fullPage = true, sections = true } = {}) {
     height: document.documentElement.scrollHeight,
     overflow: document.documentElement.scrollWidth > innerWidth ? (document.documentElement.scrollWidth - innerWidth) : 0,
     cls: window.__cls,
-    wide: [...document.querySelectorAll('body *')].filter(el => { const r = el.getBoundingClientRect(); return r.right > innerWidth + 2 && getComputedStyle(el).position !== 'fixed' && !el.closest('.stage, .echo, .track-wrap, .diagram-scroll'); }).slice(0, 6).map(el => el.tagName + '.' + el.className),
+    wide: [...document.querySelectorAll('body *')].filter(el => { const r = el.getBoundingClientRect(); return r.right > innerWidth + 2 && getComputedStyle(el).position !== 'fixed' && !el.closest('.rows, .stage'); }).slice(0, 6).map(el => el.tagName + '.' + el.className),
   })); } catch (e) { info = 'evaluate skipped: ' + String(e.message).slice(0, 80); }
   console.log(`[${tag}]`, JSON.stringify(info), 'errors:', errs.length ? errs : 'none', 'missing:', missing.length ? missing : 'none');
   await ctx.close();

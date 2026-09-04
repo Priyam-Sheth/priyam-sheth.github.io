@@ -61,7 +61,7 @@ end to end.
 Plain, confident, warm. Premium-professional product site — a precision-made object, crisp and airy. The register is understated competence: every claim true and specific, tech names confined to small mono lines, no jargon in body copy. Warmth lives in the copy's voice, never in theatrics.
 
 ## Anti-references
-- **Revised 3 Sep 2026 (Priyam's directive):** the quiet, static v1 was judged unsatisfying. v2 deliberately adds layered 3D depth, scroll feedback, a sticky case-study stack, live diagrams and demos, in the register of the best 2026 portfolio sites. What stays banned: WebGL fog for its own sake, monumental typography, scroll-hijacking, any motion that hides content, and anything the reader cannot switch off with reduced motion. See `docs/v2-plan.md`.
+- **Revised 4 Sep 2026 (Priyam's directive):** v1 (quiet, static) and v2 (3D planes, diagram, sticky stack) were both judged generic. v3 follows the language of heylemon.ai, the reference Priyam chose: painted panels, one light serif with italic emphasis, and product windows where the visitor watches a message become finished work. What stays banned: WebGL fog for its own sake, monumental typography, scroll-hijacking, any motion that hides content, and anything the reader cannot switch off with reduced motion. See `docs/v2-plan.md`.
 - Methodology narrative of any kind: how the software gets built (AI team, agents, process) is never the story; what it does for the business is.
 - SaaS landing-page clichés: hero-metric blocks, gradient text, icon-card grids, eyebrow kickers on every section.
 - Inflated claims. Every sentence must stay literally true.

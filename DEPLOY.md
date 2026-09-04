@@ -1,4 +1,4 @@
-# Deploy — GitHub Pages (v2, 3 Sep 2026)
+# Deploy — GitHub Pages (v3, 4 Sep 2026)
 
 ## Pre-push prune (one-time, before the first deploy)
 ```bash
@@ -37,7 +37,8 @@ done 2 Sep 2026: the page links `https://b2bwolfeyes.in`.
 - Optionally add `<link rel="canonical" href="https://priyam-sheth.github.io/">`
 
 ## What ships / what doesn't
-- Ships: index.html, src/v2/, assets/fonts (6 files), assets/processed2/, assets/portrait.webp, assets/og.png, .nojekyll
+- Ships: index.html, src/v3/, assets/fonts (10 files), assets/paint/ (4 paintings), assets/processed2/, assets/portrait.webp, assets/og.png, .nojekyll
+- Regenerate the paintings with `python scripts/paint.py`, the share image with `node scripts/og/build-og.mjs`.
 - Dev-only (add to .gitignore or leave; they don't affect the page): node_modules, package*.json,
   scripts/, docs/, PRODUCT.md, DESIGN.md, .impeccable/, .agents/
 
