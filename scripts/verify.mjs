@@ -18,7 +18,7 @@ const srv = http.createServer((req, res) => {
   createReadStream(p).pipe(res);
 }).listen(8342);
 
-const SECTIONS = ['.hero', '#strip', '#how', '#see', '#vs', '#layers', '#numbers', '#love', '#about', '#contact'];
+const SECTIONS = ['.hero', '#next', '#how', '#see', '#vs', '#numbers', '#clients', '#about', '#contact'];
 const b = await chromium.launch();
 
 async function pass(tag, opts, { fullPage = true, sections = true } = {}) {
