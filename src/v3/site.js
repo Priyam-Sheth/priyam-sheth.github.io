@@ -73,7 +73,7 @@
       if (stage && p) { stage.classList.remove('dusk', 'gold', 'rose', 'night'); stage.classList.add(p.dataset.paint || 'dusk'); stage.classList.toggle('on-night', p.dataset.paint === 'night'); }
       if (id === 'p-erp') playAlloc?.(); if (id === 'p-uics') playUics?.(); if (id === 'p-onyx') nudge?.();
     };
-    tabs.forEach(t => t.addEventListener('click', () => { show(t.getAttribute('aria-controls')); history.replaceState(null, '', '#see'); }));
+    tabs.forEach(t => t.addEventListener('click', () => { show(t.getAttribute('aria-controls')); history.replaceState(null, '', '#see'); t.scrollIntoView({ inline: 'center', block: 'nearest', behavior: REDUCED ? 'auto' : 'smooth' }); }));
     tabs.forEach((t, i) => t.addEventListener('keydown', e => {
       if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
       const n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]; n.focus(); n.click();

@@ -72,7 +72,7 @@ p{text-wrap:pretty}
 /* chapter marks: the one small mono device, used on plates only */
 .mark{display:inline-block;max-width:100%;text-align:center;font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.16em;text-transform:uppercase;color:var(--teal-2);line-height:1.6}
 .mark::before,.mark::after{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7;vertical-align:middle;margin:0 .6rem}
-@media (max-width:520px){.mark{font-size:.68rem;letter-spacing:.12em}.mark::before,.mark::after{margin:0 .4rem}}
+@media (max-width:520px){.mark{font-size:.72rem;letter-spacing:.1em}.mark::before,.mark::after{margin:0 .4rem}}
 .on-night .mark{color:var(--teal-lit)}
 
 /* buttons */
@@ -93,7 +93,7 @@ p{text-wrap:pretty}
 .nav-links a:not(.btn):hover{color:var(--ink)}
 .nav .btn{padding:.65rem 1.15rem;box-shadow:none}
 @media (max-width:760px){.nav-links a:not(.btn){display:none}}
-@media (max-width:600px){.win-meta{display:none}.saybar{width:100%;justify-content:space-between}.saybar .who{display:none}.saybar .txt{flex:1;min-width:0;max-width:none}.demo{margin-bottom:-7rem}.hero-spacer{height:8rem}}
+
 
 /* reveals: visible by default */
 .r{opacity:1;transform:none}
@@ -119,14 +119,14 @@ body.js .r.in{opacity:1;transform:none;transition:opacity 800ms var(--ease),tran
    HERO
    ============================================================ */
 .hero-wrap{padding:.4rem clamp(.75rem,2vw,1.5rem) 0}
-.hero{padding:clamp(3.5rem,8vh,6rem) clamp(1rem,4vw,3rem) 0;text-align:center}
+.hero{padding:clamp(3.5rem,8vh,6rem) clamp(1rem,4vw,3rem) 11rem;text-align:center}
 .hero h1{font-size:var(--t-hero);max-width:17ch;margin:1.4rem auto 0}
 .hero .lede{font-size:var(--t-lg);color:var(--ink-2);max-width:40ch;margin:1.4rem auto 0;line-height:1.5}
 .hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem;margin-top:2rem}
 .hero .fine{display:block;margin-top:1.1rem}
 
 /* the demo: a "you say" bar riding above a chat window */
-.demo{position:relative;max-width:44rem;margin:2.6rem auto -9rem;text-align:left}
+.demo{position:relative;z-index:3;max-width:44rem;margin:-9.5rem auto 0;padding:0 clamp(.5rem,2vw,1rem);text-align:left}
 .saybar{position:relative;z-index:3;display:flex;align-items:center;gap:.75rem;padding:.6rem .85rem .6rem .7rem;border-radius:var(--r-pill);background:var(--ink);color:#fff;width:fit-content;max-width:100%;margin:0 auto;box-shadow:0 10px 30px rgba(22,24,29,.25)}
 .saybar .who{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.14em;color:var(--mari)}
 .saybar .txt{font-family:var(--mono);font-size:var(--t-sm);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:32ch}
@@ -148,7 +148,7 @@ body.js .r.in{opacity:1;transform:none;transition:opacity 800ms var(--ease),tran
 .msg.bot{align-self:flex-start;background:#F1F2EE;border-bottom-left-radius:4px;white-space:pre-line}
 .msg.bot b{font-weight:600}
 .msg.bot .hid{display:inline-block;min-width:4.2ch;height:.9em;vertical-align:-.1em;border-radius:4px;background:linear-gradient(90deg,#D7DAD3,#C9CDC4);filter:blur(2.5px)}
-.msg .t{display:block;margin-top:.3rem;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);text-align:right;letter-spacing:.06em}
+.msg .t{display:block;margin-top:.3rem;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);text-align:right;letter-spacing:.06em}
 .typing{align-self:flex-start;display:inline-flex;gap:4px;padding:.7rem .9rem;background:#F1F2EE;border-radius:14px;border-bottom-left-radius:4px}
 .typing i{width:6px;height:6px;border-radius:50%;background:var(--ink-3);animation:blink 1s infinite;animation-delay:calc(var(--i) * 160ms)}
 @keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
@@ -158,8 +158,8 @@ body.js .r.in{opacity:1;transform:none;transition:opacity 800ms var(--ease),tran
 .chip:hover{border-color:var(--ink);transform:translateY(-1px)}
 .chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
 .chip:disabled{opacity:.5;cursor:default;transform:none}
-.demo-note{margin:.6rem 0 0;text-align:center}
-.hero-spacer{height:10.5rem}
+.demo-note{margin:.7rem auto 0;text-align:center;font-family:var(--sans);text-transform:none;letter-spacing:0;font-size:var(--t-xs);color:var(--ink-3);max-width:44ch}
+.hero .fine{margin-left:auto;margin-right:auto}
 
 /* ============================================================
    STRIP: what is running today
@@ -171,7 +171,7 @@ body.js .r.in{opacity:1;transform:none;transition:opacity 800ms var(--ease),tran
 /* ============================================================
    SECTION HEADS
    ============================================================ */
-.section{padding:clamp(4rem,9vh,7rem) 0 0}
+.section{padding-top:clamp(4rem,9vh,7rem)}
 .section h2{font-size:var(--t-h2);max-width:20ch;margin:1rem auto 0}
 .section .sub{color:var(--ink-2);font-size:var(--t-lg);max-width:44ch;margin:1.1rem auto 0;line-height:1.5}
 
@@ -193,7 +193,7 @@ body.js .r.in{opacity:1;transform:none;transition:opacity 800ms var(--ease),tran
 .step-arrow.a1{left:calc(33.33% - 18px + .2rem)}.step-arrow.a2{left:calc(66.66% - 18px - .2rem)}
 /* objects inside the art */
 .obj{position:relative;z-index:1;background:#fff;border-radius:14px;box-shadow:var(--shadow-win);padding:.9rem 1.1rem;font-size:var(--t-sm);max-width:15rem}
-.obj .k{display:block;font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-2);margin-bottom:.35rem}
+.obj .k{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-2);margin-bottom:.35rem}
 .obj .ok{color:var(--teal-2);font-weight:600}
 .obj.dark{background:var(--ink);color:#fff}
 .obj.dark .k{color:var(--mari)}
@@ -257,10 +257,10 @@ body.js .r.in{opacity:1;transform:none;transition:opacity 800ms var(--ease),tran
 .strip-nav button:disabled{opacity:.35;cursor:default;transform:none}
 .stage.on-night .strip-nav button{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)}
 .stage.on-night .strip-bar .fine{color:var(--night-dim)}
-.gallery{display:flex;gap:.9rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.25rem .25rem .6rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.gallery{display:flex;align-items:flex-start;gap:.9rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.25rem .25rem .6rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .gallery::-webkit-scrollbar{display:none}
 .gallery figure{flex:0 0 auto;width:min(30rem,82vw);scroll-snap-align:start;margin:0}
-.gallery figure.tall{width:min(13.5rem,60vw)}
+.gallery figure.tall{width:min(11rem,38vw)}
 .gallery .shot{background:#fff;border-radius:var(--r-win);overflow:hidden;box-shadow:var(--shadow-win);border:1px solid rgba(22,24,29,.06)}
 .gallery .shot img{width:100%;display:block}
 .gallery figure.tall .shot{border-radius:24px;border:4px solid #1a1f27;background:#1a1f27}
@@ -268,7 +268,7 @@ body.js .r.in{opacity:1;transform:none;transition:opacity 800ms var(--ease),tran
 .gallery figcaption b{color:var(--ink);font-weight:600}
 .stage.on-night .gallery figcaption{color:var(--night-dim)}
 .stage.on-night .gallery figcaption b{color:#fff}
-.strip-note{margin:.2rem 0 .4rem;text-align:left;color:var(--ink-3)}
+.strip-note{margin-top:.2rem;text-align:left;font-family:var(--sans);font-size:var(--t-xs);letter-spacing:0;text-transform:none;color:var(--ink-3)}
 .stage.on-night .strip-note{color:var(--night-dim)}
 
 /* two phones side by side (live commerce) */
@@ -430,11 +430,87 @@ footer{background:var(--ink);color:#fff;margin-top:clamp(3rem,6vw,5rem);padding:
 .foot .wordmark{color:#fff}.foot .wordmark .logo{outline:1px solid rgba(255,255,255,.25)}
 .foot .tag{margin-top:.8rem;font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.16em;text-transform:uppercase;color:var(--night-dim)}
 .foot h4{font-family:var(--mono);font-weight:400;font-size:var(--t-xs);letter-spacing:.16em;text-transform:uppercase;color:var(--night-dim);margin-bottom:1rem}
-.foot ul{list-style:none;display:grid;gap:.6rem}
-.foot a{color:#fff;text-decoration:none;font-size:var(--t-sm)}
+.foot ul{list-style:none;display:grid;gap:.1rem}
+.foot a{color:#fff;text-decoration:none;font-size:var(--t-sm);display:inline-block;padding:.5rem 0}
 .foot a:hover{color:var(--mari)}
 .foot-bar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem 2rem;margin-top:3rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.12);font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--night-dim)}
 @media (max-width:760px){.foot{grid-template-columns:1fr 1fr}}
+
+/* ============================================================
+   PHONES
+   ============================================================ */
+@media (max-width:760px){
+  .hero{padding-bottom:8.5rem}
+  .hero .fine{text-wrap:balance;max-width:30ch}
+  .demo{margin-top:-7rem;padding:0 .25rem}
+  .win-meta{display:none}
+  .saybar{width:100%;flex-wrap:wrap;justify-content:flex-start;gap:.35rem .6rem;padding:.6rem .9rem}
+  .saybar .who{display:none}
+  .saybar .txt{flex:1 1 0;min-width:0;max-width:none;font-size:.875rem}
+  .saybar .ok{flex:0 0 100%;text-align:right;font-size:.72rem;letter-spacing:.08em}
+  .chips{padding:.7rem .8rem .9rem}
+  .chip{font-size:.875rem;padding:.55rem .85rem}
+  /* tabs become one scrollable row */
+  .tabs{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x proximity;padding:.25rem 1rem .6rem;margin-left:-1rem;margin-right:-1rem;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    mask-image:linear-gradient(90deg,transparent,#000 4%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 92%,transparent)}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;scroll-snap-align:start}
+  .stage{padding:1.75rem 1rem 1.75rem}
+  .panel-head{margin-bottom:1.4rem}
+  .panel-head h3{font-size:1.6rem}
+  .you{padding:1rem 1rem 1.1rem}
+  .you .q{font-size:.875rem}
+  /* captions and result lines stack instead of fragmenting */
+  .app .cap{flex-direction:column;gap:.25rem;text-transform:none;letter-spacing:0;font-family:var(--sans);font-size:var(--t-xs);padding:.7rem .9rem}
+  .app .cap b{font-weight:500}
+  .result{display:block;padding:.9rem 1.2rem;border-radius:22px;text-align:center;line-height:1.55}
+  .result .sep{display:block;height:.3rem;font-size:0}
+  .gallery figure{flex:0 0 min(30rem,100%);width:auto}
+  .gallery figure.tall{flex-basis:34%}
+  .gallery figcaption{font-size:.875rem}
+  .strip-bar{align-items:flex-start}
+  .strip-nav button{width:38px;height:38px}
+  /* demos */
+  .alloc{font-size:.8125rem}
+  .alloc th{padding:.5rem .55rem;font-size:.62rem;letter-spacing:.08em}
+  .alloc td{padding:.55rem .55rem}
+  .alloc .pw{white-space:nowrap;font-size:.72rem}
+  .alloc td:last-child{min-width:8.5rem}
+  .alloc .pass{margin-right:.3rem}
+  .appbar{font-size:.66rem;padding:.55rem .7rem}
+  .scanline{flex-wrap:wrap;gap:.35rem .9rem;font-size:.7rem;padding:.65rem .8rem}
+  .scanline > span{white-space:nowrap}
+  .buckets{padding:.75rem;gap:.6rem}
+  .bucket{padding:.8rem}
+  .bucket .k{font-size:1.8rem}
+  /* facts, love, about */
+  .facts{grid-template-columns:1fr;gap:.6rem;margin-top:1.2rem}
+  .facts .v{font-size:1.35rem}
+  .love{margin-top:1.8rem;gap:.9rem}
+  .love .big{padding:1.4rem 1.3rem}
+  .love .big blockquote{font-size:1.25rem}
+  .love blockquote{font-size:1.1rem}
+  .love .card{padding:1.3rem 1.3rem}
+  .love .dark{padding:1.4rem}
+  .about{margin-top:1.8rem}
+  .about .portrait{width:min(14rem,70%)}
+  .vs .val{font-size:1.35rem}
+  .vs li{grid-template-columns:1fr auto}
+  .vs .what{font-size:.875rem}
+  .screen{padding:1.5rem 0 1.8rem}
+  .notch{font-size:.7rem;padding:.5rem .8rem;max-width:90%;white-space:normal;line-height:1.5}
+  .stats{gap:.6rem}
+  .stat{padding:1.1rem .8rem}
+  .stat .n{font-size:2.2rem}
+  .close .doors{flex-direction:column;align-items:center}
+  .foot{grid-template-columns:1fr 1fr;gap:1.5rem 1rem}
+  .foot-bar{flex-direction:column;align-items:flex-start;gap:.5rem}
+}
+@media (max-width:420px){
+  .hero h1{font-size:2.35rem}
+  .section h2{font-size:2.1rem}
+  .tab{font-size:.875rem;padding:.6rem 1rem}
+}
 
 /* ---------- reduced motion ---------- */
 @media (prefers-reduced-motion:reduce){
