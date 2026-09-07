@@ -32,7 +32,7 @@ plates, not the page ground. One dark plate (numbers) and a dark footer.
 
 ## Mark
 - Wordmark: a signature, "Priyam" in Sentient italic 500 with a marigold underline stroke
-  (inline SVG in nav and footer; `assets/signature.svg` for reuse). Chosen by Priyam on 6 Sep 2026
+  (inline SVG in nav and footer, nothing beside it; `assets/signature.svg` for reuse). Chosen by Priyam on 6 Sep 2026
   over a monogram and an abstract mark: "a person, not an agency".
 - Favicon and app icon: the bubble-with-a-tick, `assets/logo.svg`. "Said, done."
 
@@ -57,7 +57,6 @@ plates, not the page ground. One dark plate (numbers) and a dark footer.
 - **Phones**: two phone frames side by side inside an app window (Live Commerce: stream + sheet).
 - **Facts**: a three-column grid of measured claims, serif value with one italic word, mono-free.
 - **VS**: two cards, by hand vs with the system, with bars that grow on entry.
-- **Path**: four dots on a line, the steps after a visitor messages (call, scope, build, stay).
 - **WhatsApp door**: green `btn-wa` with the official glyph, prefilled wa.me text, in the path
   section and the close panel.
 - **Stats**: four cells on the night plate, counters tick up once.
